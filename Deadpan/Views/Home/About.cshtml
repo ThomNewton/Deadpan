@@ -1,0 +1,79 @@
+﻿@*
+    This view displays the static "About" page for the application.
+    It contains information about the project's philosophy, the author,
+    and contact details.
+*@
+@{
+    ViewBag.Title = "About the Project";
+}
+
+@*
+    Inline CSS styles specifically for this "About" page.
+    This is used to style the contact links with icons for a cleaner presentation.
+*@
+<style>
+    .contact-link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .contact-link i {
+        margin-right: 5px;
+        width: 20px; /* Ensures icons are aligned */
+        text-align: center;
+    }
+
+    .contact-link a {
+        color: inherit; /* Makes the link color the same as the surrounding text */
+        text-decoration: none; /* Removes the underline */
+    }
+
+    .contact-link a:hover {
+        text-decoration: underline; /* Adds the underline back on hover for clarity */
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-8">
+        @* Section explaining the purpose and inspiration behind the Deadpan project. *@
+        <h3>About Deadpan</h3>
+        <p>
+            Deadpan was born from a love for a certain kind of cinema. Inspired by the quiet cool of Jim Jarmusch's films, this project is an attempt to create a simple, focused space for film lovers—a digital logbook for those who find poetry in the mundane and meaning in the margins. It is a place for reflection, not just reaction.
+        </p>
+        <p>
+            This application was built using ASP.NET MVC with C#, Entity Framework, and SQL Server.
+        </p>
+
+        @* Section providing a personal introduction to the author of the application. *@
+        <h3>About the Author</h3>
+        <p>
+            Hello, I'm Maciej. I created this project.
+        </p>
+        <p>
+            When I'm not coding, I'm usually lost in a book. My shelves hold a strange conversation between the sci-fi philosophy of Stanisław Lem, the surrealist plays of Witkacy, and the timeless tragedies of Shakespeare. I find myself returning to the existential questions posed by Nietzsche and Camus, the introspective worlds of Hermann Hesse, and the dark romanticism of Baudelaire. More recently, I've been exploring the dreamscapes of Neil Gaiman's "The Sandman" and the stark prose of Japanese authors like Osamu Dazai and Edogawa Ranpo.
+        </p>
+        <p>
+            My taste in film is similarly varied. While Jarmusch's aesthetic is the soul of this project, my cinematic world is populated by many masters. I've recently been captivated by the epic humanity of Akira Kurosawa's films and have long been a student of the emotional precision of Kieślowski, the lush melancholy of Wong Kar-wai, and the surreal dreamscapes of David Lynch. I admire the intellectual rigor of Kubrick and Tarkovsky, the revolutionary energy of Godard, and the sheer spectacle of Christopher Nolan. And sometimes, a film like "La La Land" or "Moonage Daydream" just perfectly captures a mood.
+        </p>
+        <p>
+            Music is the final piece of the puzzle. I grew up on a steady diet of rock, classical, and electronic music, but my current soundtrack is filled with the improvisational freedom of jazz and the raw emotion of funk, soul, and blues. Through it all, the artists I return to most are the storytellers: David Bowie, Leonard Cohen, and Prince. You can usually find me with a book or a laptop in the quiet corner of a coffee shop, bookshop, or a dimly lit jazz club.
+        </p>
+
+        @* Section with contact links, using Font Awesome icons for visual flair. *@
+        <h3>Contact</h3>
+        <p>
+            Have questions, feedback, or just want to talk about movies? You can reach me at:
+        </p>
+        <div>
+            <div class="contact-link">
+                <a href="mailto:m.t.jedynak@gmail.com"> <i class="fa-solid fa-envelope"></i> <strong>m.t.jedynak@gmail.com</strong></a>
+            </div>
+            <div class="contact-link">
+                <a href="https://x.com/maciejtjedynak" target="_blank"><i class="fa-brands fa-x-twitter"></i> <strong>@@maciejtjedynak</strong></a>
+            </div>
+        </div>
+
+    </div>
+</div>

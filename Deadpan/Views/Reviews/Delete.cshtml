@@ -1,0 +1,59 @@
+﻿@*
+    This view serves as a confirmation page before a review is permanently deleted.
+    It is strongly typed to the Review model, which provides the data for the review
+    that is being considered for deletion.
+*@
+@model Deadpan.Models.Review
+
+@{
+    ViewBag.Title = "Delete Review";
+}
+
+<h2>Delete Review</h2>
+
+<h3>Are you sure you want to delete this review?</h3>
+<div>
+    @* --- REVIEW DETAILS --- *@
+    @* Display a summary of the review to ensure the user knows what they are deleting. *@
+    <h4>Review for @Model.Movie.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @* Label for the Rating property. *@
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @* Value of the Rating property. *@
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @* Label for the Comment property. *@
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @* Value of the Comment property. *@
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+
+    @* --- DELETE CONFIRMATION FORM --- *@
+    @*
+        This form, when submitted, will POST to the DeleteConfirmed action in the ReviewsController,
+        passing the ID of the current review to complete the deletion.
+    *@
+    @using (Html.BeginForm())
+    {
+        @* Include an anti-forgery token for security against CSRF attacks. *@
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @* The final "Delete" button. Submits the form. *@
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @* A link to cancel the operation and return to the movie's details page. *@
+            @Html.ActionLink("Back to Movie", "Details", "Movies", new { id = Model.MovieId }, null)
+        </div>
+    }
+</div>

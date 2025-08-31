@@ -1,0 +1,42 @@
+\hypertarget{class_deadpan_1_1_models_1_1_review}{}\doxysection{Deadpan.\+Models.\+Review Class Reference}
+\label{class_deadpan_1_1_models_1_1_review}\index{Deadpan.Models.Review@{Deadpan.Models.Review}}
+
+
+Represents a single user review for a specific movie. This class links an Application\+User and a Movie together.  
+
+
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_abeb6cb82dcb73f5aa0c8efb4770ac5d2}\label{class_deadpan_1_1_models_1_1_review_abeb6cb82dcb73f5aa0c8efb4770ac5d2}} 
+int {\bfseries Review\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the primary key for the Review. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_ac46ffc3db1a080c36ad391e5a786aef8}\label{class_deadpan_1_1_models_1_1_review_ac46ffc3db1a080c36ad391e5a786aef8}} 
+decimal {\bfseries Rating}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the user\textquotesingle{}s numerical rating for the movie. The value must be between 0.\+0 and 5.\+0. It can include half-\/star ratings (e.\+g., 3.\+5). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_a91a17b20a0ec0acfe284b44b5dbda15d}\label{class_deadpan_1_1_models_1_1_review_a91a17b20a0ec0acfe284b44b5dbda15d}} 
+string {\bfseries Comment}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the user\textquotesingle{}s written commentary or thoughts on the movie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_af61ded8eaee652d6d9264e4c13be64e7}\label{class_deadpan_1_1_models_1_1_review_af61ded8eaee652d6d9264e4c13be64e7}} 
+Date\+Time {\bfseries Review\+Date}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the date and time when the review was created or last updated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_a772493469f319d3c171262b54c008519}\label{class_deadpan_1_1_models_1_1_review_a772493469f319d3c171262b54c008519}} 
+int {\bfseries Movie\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the foreign key for the Movie this review belongs to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_afefb461d61b8cfdbb6485b504089e5c4}\label{class_deadpan_1_1_models_1_1_review_afefb461d61b8cfdbb6485b504089e5c4}} 
+virtual \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}} {\bfseries Movie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the navigation property to the associated Movie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_a9d2009d1d74b386eab8b64d027456ab3}\label{class_deadpan_1_1_models_1_1_review_a9d2009d1d74b386eab8b64d027456ab3}} 
+string {\bfseries User\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the foreign key for the Application\+User who wrote this review. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_review_a065e92c24fa712f48a42baf2975fa95c}\label{class_deadpan_1_1_models_1_1_review_a065e92c24fa712f48a42baf2975fa95c}} 
+virtual \mbox{\hyperlink{class_deadpan_1_1_models_1_1_application_user}{Application\+User}} {\bfseries User}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the navigation property to the associated Application\+User. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single user review for a specific movie. This class links an Application\+User and a Movie together. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Models/Review.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,261 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller}{}\doxysection{Deadpan.\+Controllers.\+Movies\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_movies_controller}\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+
+
+Manages all movie-\/related operations, including displaying, creating, editing, deleting, and fetching movie data from the TMDB API.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Movies\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_movies_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_a27fad473820ad07ff933ab5cbe3db619}{Fetch}} ()
+\begin{DoxyCompactList}\small\item\em Displays the initial view for fetching movie data from TMDB. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_ae4120b4c67352e56b14d896b50ff4b21}{Fetch}} (string movie\+Title)
+\begin{DoxyCompactList}\small\item\em Handles the submission of a movie title search against the TMDB API. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_ac79cd243bd862004e59ba736dafa2ba6}{Get\+Movie\+Details}} (int tmdb\+Id)
+\begin{DoxyCompactList}\small\item\em Fetches detailed information for a specific movie from the TMDB API using its ID, then populates and displays the movie creation form with this data. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_a9d276e7b0e4d8b0ea00c859337a08dd8}{Index}} (string sort\+Order, string current\+Filter, string search\+String)
+\begin{DoxyCompactList}\small\item\em Displays a paginated, sortable, and searchable list of all movies in the database. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_af3575a5ae4203b7b53f75050d804f44b}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Displays the details for a single movie, including its reviews. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_a37ec65e03ec1aeb24fa9fb2efce1cef6}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Displays the form for creating a new movie. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_ad995eb95af6edcd3ef40e8ba948ef4c6}{Create}} (\mbox{[}Bind(Include=\char`\"{}Movie\+Id,Title,Director,Release\+Year,Short\+Synopsis,Synopsis,Written\+By,Music\+By,Starring,Poster\+Urls\char`\"{})\mbox{]} \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}} movie)
+\begin{DoxyCompactList}\small\item\em Handles the submission of the new movie form. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_a57054371be9b72111721040c91455e07}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Displays the form for editing an existing movie. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_ab8558a8f1a8c54c13e55df51ee22c365}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Movie\+Id,Title,Director,Release\+Year,Short\+Synopsis,Synopsis,Written\+By,Music\+By,Starring,Poster\+Urls\char`\"{})\mbox{]} \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}} movie)
+\begin{DoxyCompactList}\small\item\em Handles the submission of the movie edit form. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_af659f5ca92de7257fac6aca712d4625e}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Displays a confirmation page before deleting a movie. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_aeebae541be75c0dbab72fb204f5ded1f}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Handles the permanent deletion of a movie and all its associated data (reviews, favorites). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_movies_controller_a96b76df652f919c8dd09eeedb9cc66c8}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Disposes of the database context when the controller is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages all movie-\/related operations, including displaying, creating, editing, deleting, and fetching movie data from the TMDB API. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_a37ec65e03ec1aeb24fa9fb2efce1cef6}\label{class_deadpan_1_1_controllers_1_1_movies_controller_a37ec65e03ec1aeb24fa9fb2efce1cef6}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Create@{Create}}
+\index{Create@{Create}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Movies\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the form for creating a new movie. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Create view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_ad995eb95af6edcd3ef40e8ba948ef4c6}\label{class_deadpan_1_1_controllers_1_1_movies_controller_ad995eb95af6edcd3ef40e8ba948ef4c6}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Create@{Create}}
+\index{Create@{Create}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Movie\+Id,\+Title,\+Director,\+Release\+Year,\+Short\+Synopsis,\+Synopsis,\+Written\+By,\+Music\+By,\+Starring,\+Poster\+Urls\char`\"{})\mbox{]} \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}}}]{movie }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of the new movie form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & The movie object to be created, bound from the form data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the movie Index page on success, or redisplays the form on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_af659f5ca92de7257fac6aca712d4625e}\label{class_deadpan_1_1_controllers_1_1_movies_controller_af659f5ca92de7257fac6aca712d4625e}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Delete@{Delete}}
+\index{Delete@{Delete}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Displays a confirmation page before deleting a movie. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the movie to be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Delete confirmation view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_aeebae541be75c0dbab72fb204f5ded1f}\label{class_deadpan_1_1_controllers_1_1_movies_controller_aeebae541be75c0dbab72fb204f5ded1f}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!DeleteConfirmed@{DeleteConfirmed}}
+\index{DeleteConfirmed@{DeleteConfirmed}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{DeleteConfirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Handles the permanent deletion of a movie and all its associated data (reviews, favorites). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the movie to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the movie Index page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_af3575a5ae4203b7b53f75050d804f44b}\label{class_deadpan_1_1_controllers_1_1_movies_controller_af3575a5ae4203b7b53f75050d804f44b}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Details@{Details}}
+\index{Details@{Details}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Displays the details for a single movie, including its reviews. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the movie to display.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Details view for the specified movie.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_a96b76df652f919c8dd09eeedb9cc66c8}\label{class_deadpan_1_1_controllers_1_1_movies_controller_a96b76df652f919c8dd09eeedb9cc66c8}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Deadpan.\+Controllers.\+Movies\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Disposes of the database context when the controller is disposed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True if called from Dispose(), false if called from a finalizer.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_ab8558a8f1a8c54c13e55df51ee22c365}\label{class_deadpan_1_1_controllers_1_1_movies_controller_ab8558a8f1a8c54c13e55df51ee22c365}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Edit@{Edit}}
+\index{Edit@{Edit}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Movie\+Id,\+Title,\+Director,\+Release\+Year,\+Short\+Synopsis,\+Synopsis,\+Written\+By,\+Music\+By,\+Starring,\+Poster\+Urls\char`\"{})\mbox{]} \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}}}]{movie }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of the movie edit form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & The movie object with updated data, bound from the form.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the movie Index page on success, or redisplays the form on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_a57054371be9b72111721040c91455e07}\label{class_deadpan_1_1_controllers_1_1_movies_controller_a57054371be9b72111721040c91455e07}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Edit@{Edit}}
+\index{Edit@{Edit}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Displays the form for editing an existing movie. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the movie to edit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Edit view populated with the movie\textquotesingle{}s data.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_a27fad473820ad07ff933ab5cbe3db619}\label{class_deadpan_1_1_controllers_1_1_movies_controller_a27fad473820ad07ff933ab5cbe3db619}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Movies\+Controller.\+Fetch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the initial view for fetching movie data from TMDB. Access is restricted to users in the \char`\"{}\+Admin\char`\"{} role. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Fetch view with an empty list of search results.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_ae4120b4c67352e56b14d896b50ff4b21}\label{class_deadpan_1_1_controllers_1_1_movies_controller_ae4120b4c67352e56b14d896b50ff4b21}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Fetch (\begin{DoxyParamCaption}\item[{string}]{movie\+Title }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of a movie title search against the TMDB API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie\+Title} & The title of the movie to search for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Fetch view displaying the search results from TMDB.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_ac79cd243bd862004e59ba736dafa2ba6}\label{class_deadpan_1_1_controllers_1_1_movies_controller_ac79cd243bd862004e59ba736dafa2ba6}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!GetMovieDetails@{GetMovieDetails}}
+\index{GetMovieDetails@{GetMovieDetails}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{GetMovieDetails()}{GetMovieDetails()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Get\+Movie\+Details (\begin{DoxyParamCaption}\item[{int}]{tmdb\+Id }\end{DoxyParamCaption})}
+
+
+
+Fetches detailed information for a specific movie from the TMDB API using its ID, then populates and displays the movie creation form with this data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmdb\+Id} & The unique ID of the movie on TMDB.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Create view, pre-\/filled with the fetched movie details.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_movies_controller_a9d276e7b0e4d8b0ea00c859337a08dd8}\label{class_deadpan_1_1_controllers_1_1_movies_controller_a9d276e7b0e4d8b0ea00c859337a08dd8}} 
+\index{Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}!Index@{Index}}
+\index{Index@{Index}!Deadpan.Controllers.MoviesController@{Deadpan.Controllers.MoviesController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Movies\+Controller.\+Index (\begin{DoxyParamCaption}\item[{string}]{sort\+Order,  }\item[{string}]{current\+Filter,  }\item[{string}]{search\+String }\end{DoxyParamCaption})}
+
+
+
+Displays a paginated, sortable, and searchable list of all movies in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sort\+Order} & The current sort order for the movie list.\\
+\hline
+{\em current\+Filter} & The current search filter being applied.\\
+\hline
+{\em search\+String} & The new search string submitted by the user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Index view displaying the filtered and sorted list of movies.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Movies\+Controller.\+cs\end{DoxyCompactItemize}

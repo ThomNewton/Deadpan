@@ -1,0 +1,134 @@
+﻿@*
+    This view serves as the main profile page for a user.
+    It is strongly typed to the ApplicationUser model, which contains all the necessary
+    data, including the user's reviews and favorite movies.
+*@
+@model Deadpan.Models.ApplicationUser
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "My Profile";
+    // A Random object is created to select a random poster from a movie's list of posters.
+    Random rnd = new Random();
+}
+
+@* --- PROFILE HEADER --- *@
+@* Displays a dynamic header using the user's Nickname if it exists, otherwise, it defaults to their username (the part before the @ in their email). *@
+<h2>@(string.IsNullOrWhiteSpace(Model.Nickname) ? Model.UserName.Split('@')[0] : Model.Nickname)'s profile</h2>
+<hr />
+
+@* --- LIKED MOVIES SECTION --- *@
+<h3>Liked (@Model.FavoriteMovies.Count)</h3>
+@if (Model.FavoriteMovies.Any())
+{
+    <div class="row">
+        @* Loop through up to 6 of the user's favorite movies to display their posters. *@
+        @foreach (var movie in Model.FavoriteMovies.Take(6))
+        {
+            <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                @{
+                    // Logic to select a random poster URL.
+                    string posterToShow = "https://via.placeholder.com/300x450?text=No+Poster";
+                    if (!string.IsNullOrWhiteSpace(movie.PosterUrls))
+                    {
+                        var posters = movie.PosterUrls.Split(',');
+                        posterToShow = posters[rnd.Next(posters.Length)];
+                    }
+                }
+                @* The movie poster is a link to that movie's details page. *@
+                <a href="@Url.Action("Details", "Movies", new { id = movie.MovieId })">
+                    <img src="@posterToShow" class="img-responsive img-thumbnail" alt="@movie.Title Poster" />
+                </a>
+                <div>
+                    <small>@movie.Title</small>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    @* Display a message if the user has not liked any movies yet. *@
+    <p>You haven't liked any movies yet.</p>
+}
+<hr />
+
+@* --- FILMS (RATED) SECTION --- *@
+@{
+    // This LINQ query prepares a list of the 6 most recently reviewed unique movies.
+    // It orders all reviews by date, selects the associated movies, groups them by MovieId
+    // to remove duplicates, and then takes the first 6.
+    var ratedMovies = Model.Reviews
+                           .OrderByDescending(r => r.ReviewDate)
+                           .Select(r => r.Movie)
+                           .GroupBy(m => m.MovieId)
+                           .Select(g => g.First())
+                           .Take(6)
+                           .ToList();
+}
+<h3>Films (@Model.Reviews.Select(r => r.MovieId).Distinct().Count())</h3>
+@if (ratedMovies.Any())
+{
+    <div class="row">
+        @* Loop through the prepared list of recently rated movies and display their posters. *@
+        @foreach (var movie in ratedMovies)
+        {
+            <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                @{
+                    string posterToShow = "https://via.placeholder.com/300x450?text=No+Poster";
+                    if (!string.IsNullOrWhiteSpace(movie.PosterUrls))
+                    {
+                        var posters = movie.PosterUrls.Split(',');
+                        posterToShow = posters[rnd.Next(posters.Length)];
+                    }
+                }
+                <a href="@Url.Action("Details", "Movies", new { id = movie.MovieId })">
+                    <img src="@posterToShow" class="img-responsive img-thumbnail" alt="@movie.Title Poster" />
+                </a>
+                <div>
+                    <small>@movie.Title</small>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    @* Display a message if the user has not rated any films yet. *@
+    <p>You haven't rated any films yet.</p>
+}
+<hr />
+
+@* --- REVIEWS SECTION --- *@
+<h3>Reviews (@Model.Reviews.Count)</h3>
+@if (Model.Reviews.Any())
+{
+    @* Loop through all of the user's reviews, ordering them from newest to oldest. *@
+    foreach (var review in Model.Reviews.OrderByDescending(r => r.ReviewDate))
+    {
+        <div class="well well-sm" style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+                @* Display the movie title as a link, the movie's release year, the user's rating, their comment, and the date of the review. *@
+                <h4>@Html.ActionLink(review.Movie.Title, "Details", "Movies", new { id = review.Movie.MovieId }, null) (@review.Movie.ReleaseYear)</h4>
+                <p><strong>My Rating:</strong> @review.Rating.ToString("0.##") / 5</p>
+                <p>@review.Comment</p>
+                <small class="text-muted">Reviewed on @review.ReviewDate.ToShortDateString()</small>
+            </div>
+            <div style="margin-left: 20px;">
+                @*
+                    SECURITY CHECK: The "Delete" button for a review is only rendered if the currently logged-in user
+                    is the author of the review OR if the user is an Administrator.
+                *@
+                @if (User.Identity.GetUserId() == review.UserId || User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "Delete", "Reviews", new { id = review.ReviewId }, new { @class = "btn btn-danger btn-xs" })
+                }
+            </div>
+        </div>
+    }
+}
+else
+{
+    @* Display a message if the user has not written any reviews yet. *@
+    <p>You haven't written any reviews yet.</p>
+}

@@ -1,0 +1,53 @@
+﻿@*
+    This view renders the form for the user to enter their two-factor authentication (2FA) code.
+    It is strongly typed to the VerifyCodeViewModel, which carries the necessary data
+    to complete the 2FA verification process.
+*@
+@model Deadpan.Models.VerifyCodeViewModel
+@{
+    ViewBag.Title = "Verify";
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+
+    @*
+        This form posts the verification code and other details to the "VerifyCode"
+        action in the "AccountController" to finalize the login process.
+    *@
+    @using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @* Hidden fields to persist necessary information through the request. *@
+        @Html.Hidden("provider", @Model.Provider)
+        @Html.Hidden("rememberMe", @Model.RememberMe)
+        <h4>Enter verification code</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            @Html.LabelFor(m => m.Code, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-2 col-md-10">
+                <div class="checkbox">
+                    @* This checkbox allows the user to mark their current browser as "remembered",
+                        bypassing 2FA on this device in the future. *@
+                    @Html.CheckBoxFor(m => m.RememberBrowser)
+                    @Html.LabelFor(m => m.RememberBrowser)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-2 col-md-10">
+                <input type="submit" class="btn btn-outline-dark" value="Submit" />
+            </div>
+        </div>
+    }
+</main>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

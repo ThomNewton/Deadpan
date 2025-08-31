@@ -1,0 +1,48 @@
+﻿@*
+    This view renders the form for verifying a phone number.
+    It's strongly typed to the VerifyPhoneNumberViewModel, which contains the
+    phone number being verified and the code entered by the user.
+*@
+@model Deadpan.Models.VerifyPhoneNumberViewModel
+@{
+    ViewBag.Title = "Verify Phone Number";
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+
+    @*
+        This form POSTs the verification data back to the "VerifyPhoneNumber" action
+        in the "Manage" controller.
+    *@
+    @using (Html.BeginForm("VerifyPhoneNumber", "Manage", FormMethod.Post, new { role = "form" }))
+    {
+        @* Include an anti-forgery token for security. *@
+        @Html.AntiForgeryToken()
+        @* A hidden field to pass the phone number back to the controller, ensuring the correct number is verified. *@
+        @Html.Hidden("phoneNumber", @Model.PhoneNumber)
+        <h4>Enter verification code</h4>
+        <h5>@ViewBag.Status</h5>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            @Html.LabelFor(m => m.Code, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-2 col-md-10">
+                <input type="submit" class="btn btn-outline-dark" value="Submit" />
+            </div>
+        </div>
+    }
+</main>
+
+@*
+    This section renders the jQuery Validation script bundle to enable client-side validation
+    based on the data annotations in the VerifyPhoneNumberViewModel.
+*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

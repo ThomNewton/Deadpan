@@ -1,0 +1,388 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|c:\\users\\maciej jedynak\\desktop\\deadpan\\deadpan\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|c:\\users\\maciej jedynak\\desktop\\deadpan\\deadpan\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\account\\externalloginfailure.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\account\\externalloginfailure.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\account\\externalloginconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\account\\externalloginconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\account\\_externalloginslistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\account\\_externalloginslistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\admin\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\admin\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\manage\\addphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\manage\\addphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\manage\\managelogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\manage\\managelogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\manage\\setpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\manage\\setpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\manage\\verifyphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\manage\\verifyphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\movies\\fetch.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\movies\\fetch.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\movies\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\movies\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\movies\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\movies\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\views\\movies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EDC7A58B-1D27-4D3F-8DCA-4D0110BDAD15}|Deadpan.csproj|solutionrelative:views\\movies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 78,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Controllers\\MoviesController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwBkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T17:36:10.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T13:07:51.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExternalLoginFailure.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ExternalLoginFailure.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ExternalLoginFailure.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ExternalLoginFailure.cshtml",
+              "RelativeToolTip": "Views\\Account\\ExternalLoginFailure.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T13:06:24.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExternalLoginConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "RelativeToolTip": "Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T13:03:21.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ConfirmEmail.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "Views\\Account\\ConfirmEmail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T13:01:38.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ExternalLoginsListPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "RelativeToolTip": "Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:49:02.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:45:16.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Admin\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Admin\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:42:34.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:36:12.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:34:02.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddPhoneNumber.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\AddPhoneNumber.cshtml",
+              "RelativeDocumentMoniker": "Views\\Manage\\AddPhoneNumber.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\AddPhoneNumber.cshtml",
+              "RelativeToolTip": "Views\\Manage\\AddPhoneNumber.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAwwCEAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:28:39.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Manage\\ChangePassword.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\ChangePassword.cshtml",
+              "RelativeToolTip": "Views\\Manage\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:15:36.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Manage\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\Index.cshtml",
+              "RelativeToolTip": "Views\\Manage\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:08:02.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ManageLogins.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\ManageLogins.cshtml",
+              "RelativeDocumentMoniker": "Views\\Manage\\ManageLogins.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\ManageLogins.cshtml",
+              "RelativeToolTip": "Views\\Manage\\ManageLogins.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T12:06:24.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VerifyPhoneNumber.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "RelativeDocumentMoniker": "Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "RelativeToolTip": "Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAABwAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T11:10:55.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\SetPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Manage\\SetPassword.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Manage\\SetPassword.cshtml",
+              "RelativeToolTip": "Views\\Manage\\SetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T11:08:14.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Index.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:59:55.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Fetch.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Fetch.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Fetch.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Fetch.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Fetch.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:58:20.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:56:19.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Details.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Details.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAwwMwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:20:59.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:19:03.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Maciej Jedynak\\Desktop\\Deadpan\\Deadpan\\Views\\Movies\\Create.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T10:17:43.693Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 22,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

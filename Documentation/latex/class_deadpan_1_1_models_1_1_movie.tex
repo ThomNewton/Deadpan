@@ -1,0 +1,60 @@
+\hypertarget{class_deadpan_1_1_models_1_1_movie}{}\doxysection{Deadpan.\+Models.\+Movie Class Reference}
+\label{class_deadpan_1_1_models_1_1_movie}\index{Deadpan.Models.Movie@{Deadpan.Models.Movie}}
+
+
+Represents a single movie in the database. This is a core domain model for the application.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a2fac2631687d834ef2ea3818c8b9ad14}\label{class_deadpan_1_1_models_1_1_movie_a2fac2631687d834ef2ea3818c8b9ad14}} 
+{\bfseries Movie} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Movie class. The constructor initializes the navigation property collections to prevent null reference exceptions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a39ab6d5bcf665fee661ffe4484a79093}\label{class_deadpan_1_1_models_1_1_movie_a39ab6d5bcf665fee661ffe4484a79093}} 
+int {\bfseries Movie\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the primary key for the Movie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_ad6be7ca86b876ec0ade4486b5e2fae78}\label{class_deadpan_1_1_models_1_1_movie_ad6be7ca86b876ec0ade4486b5e2fae78}} 
+string {\bfseries Title}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the title of the movie. This field is required. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_aaa10c2cd9fd5d678c4731bc6ae431ba5}\label{class_deadpan_1_1_models_1_1_movie_aaa10c2cd9fd5d678c4731bc6ae431ba5}} 
+string {\bfseries Director}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the movie\textquotesingle{}s director. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a27eb06009d190ac83e129b86ecad5461}\label{class_deadpan_1_1_models_1_1_movie_a27eb06009d190ac83e129b86ecad5461}} 
+int {\bfseries Release\+Year}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the year the movie was released. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_ab20fd1b755dc9b0b91f5bd54d22826db}\label{class_deadpan_1_1_models_1_1_movie_ab20fd1b755dc9b0b91f5bd54d22826db}} 
+string {\bfseries Synopsis}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the full, detailed synopsis for the movie. Intended for the movie\textquotesingle{}s details page. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_acaaa6d74f1ed457b7d78758148e0d3ab}\label{class_deadpan_1_1_models_1_1_movie_acaaa6d74f1ed457b7d78758148e0d3ab}} 
+string {\bfseries Short\+Synopsis}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a brief, one-\/sentence synopsis. Intended for display in lists or tables. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a7355d172dbe941ff749af325b5b86715}\label{class_deadpan_1_1_models_1_1_movie_a7355d172dbe941ff749af325b5b86715}} 
+string {\bfseries Written\+By}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name(s) of the screenwriter(s). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a692760399703d6d7d4e7d35c001b9b39}\label{class_deadpan_1_1_models_1_1_movie_a692760399703d6d7d4e7d35c001b9b39}} 
+string {\bfseries Music\+By}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name(s) of the composer(s). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a7efd3e3b340cd14dbbe151b32ebce467}\label{class_deadpan_1_1_models_1_1_movie_a7efd3e3b340cd14dbbe151b32ebce467}} 
+string {\bfseries Starring}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a comma-\/separated list of the main actors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_abbc61530211ec1b0bcf143388d1d5e1b}\label{class_deadpan_1_1_models_1_1_movie_abbc61530211ec1b0bcf143388d1d5e1b}} 
+string {\bfseries Poster\+Urls}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a comma-\/separated string of poster image URLs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_ad0976cdcb71e0f69913cb3dffff77bda}\label{class_deadpan_1_1_models_1_1_movie_ad0976cdcb71e0f69913cb3dffff77bda}} 
+virtual ICollection$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_review}{Review}} $>$ {\bfseries Reviews}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the collection of reviews associated with this movie. This is a navigation property for the one-\/to-\/many relationship between Movie and Review. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_movie_a9d289470fb07838869e734e9245ed459}\label{class_deadpan_1_1_models_1_1_movie_a9d289470fb07838869e734e9245ed459}} 
+virtual ICollection$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_application_user}{Application\+User}} $>$ {\bfseries Favorited\+By\+Users}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the collection of users who have favorited this movie. This is a navigation property for the many-\/to-\/many relationship between Movie and Application\+User. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single movie in the database. This is a core domain model for the application. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Models/Movie.\+cs\end{DoxyCompactItemize}

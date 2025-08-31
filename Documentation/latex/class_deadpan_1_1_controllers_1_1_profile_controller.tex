@@ -1,0 +1,97 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_profile_controller}{}\doxysection{Deadpan.\+Controllers.\+Profile\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_profile_controller}\index{Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}}
+
+
+Manages the display of user profiles and handles user-\/specific actions like favoriting movies. All actions in this controller require the user to be authenticated.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Profile\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_profile_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_profile_controller_ab064a8cddc086a2bfb109677c1da3f54}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Asynchronously retrieves and displays the profile page for the currently logged-\/in user. This includes their reviews and a list of their favorite movies. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_profile_controller_a5e07476578aee1c82483d425a6b613b6}{Toggle\+Favorite}} (int movie\+Id)
+\begin{DoxyCompactList}\small\item\em Toggles a movie\textquotesingle{}s status as a favorite for the current user. If the movie is already a favorite, it is removed; otherwise, it is added. \end{DoxyCompactList}\item 
+Partial\+View\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_profile_controller_af51247f09d6d5fbe57b63b2718844a36}{\+\_\+\+Login\+Partial}} ()
+\begin{DoxyCompactList}\small\item\em A child action that provides the necessary data for the shared \+\_\+\+Login\+Partial view. It fetches the user\textquotesingle{}s preferred display name (Nickname or User\+Name). This action is intended to be called only from within another view (e.\+g., the main layout). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_profile_controller_af035f55f65f0a388b7e733ac7769d153}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Disposes of the database context when the controller is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the display of user profiles and handles user-\/specific actions like favoriting movies. All actions in this controller require the user to be authenticated. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_profile_controller_af51247f09d6d5fbe57b63b2718844a36}\label{class_deadpan_1_1_controllers_1_1_profile_controller_af51247f09d6d5fbe57b63b2718844a36}} 
+\index{Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}!\_LoginPartial@{\_LoginPartial}}
+\index{\_LoginPartial@{\_LoginPartial}!Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}}
+\doxysubsubsection{\texorpdfstring{\_LoginPartial()}{\_LoginPartial()}}
+{\footnotesize\ttfamily Partial\+View\+Result Deadpan.\+Controllers.\+Profile\+Controller.\+\_\+\+Login\+Partial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A child action that provides the necessary data for the shared \+\_\+\+Login\+Partial view. It fetches the user\textquotesingle{}s preferred display name (Nickname or User\+Name). This action is intended to be called only from within another view (e.\+g., the main layout). 
+
+\begin{DoxyReturn}{Returns}
+A partial view result for the \+\_\+\+Login\+Partial view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_profile_controller_af035f55f65f0a388b7e733ac7769d153}\label{class_deadpan_1_1_controllers_1_1_profile_controller_af035f55f65f0a388b7e733ac7769d153}} 
+\index{Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Deadpan.\+Controllers.\+Profile\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Disposes of the database context when the controller is disposed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True if called from Dispose(), false if called from a finalizer.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_profile_controller_ab064a8cddc086a2bfb109677c1da3f54}\label{class_deadpan_1_1_controllers_1_1_profile_controller_ab064a8cddc086a2bfb109677c1da3f54}} 
+\index{Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}!Index@{Index}}
+\index{Index@{Index}!Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Profile\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Asynchronously retrieves and displays the profile page for the currently logged-\/in user. This includes their reviews and a list of their favorite movies. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Index view populated with the current user\textquotesingle{}s data.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_profile_controller_a5e07476578aee1c82483d425a6b613b6}\label{class_deadpan_1_1_controllers_1_1_profile_controller_a5e07476578aee1c82483d425a6b613b6}} 
+\index{Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}!ToggleFavorite@{ToggleFavorite}}
+\index{ToggleFavorite@{ToggleFavorite}!Deadpan.Controllers.ProfileController@{Deadpan.Controllers.ProfileController}}
+\doxysubsubsection{\texorpdfstring{ToggleFavorite()}{ToggleFavorite()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Profile\+Controller.\+Toggle\+Favorite (\begin{DoxyParamCaption}\item[{int}]{movie\+Id }\end{DoxyParamCaption})}
+
+
+
+Toggles a movie\textquotesingle{}s status as a favorite for the current user. If the movie is already a favorite, it is removed; otherwise, it is added. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie\+Id} & The ID of the movie to add or remove from favorites.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the movie\textquotesingle{}s Details page.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Profile\+Controller.\+cs\end{DoxyCompactItemize}

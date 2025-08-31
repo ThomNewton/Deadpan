@@ -1,0 +1,123 @@
+﻿/*
+ * =================================================================================
+ * DEADPAN - MAIN STYLESHEET (Site.css)
+ *
+ * This file contains the custom styles for the Deadpan application. It includes
+ * custom font definitions and overrides for the default Bootstrap styles to
+ * ensure a consistent and clean user interface.
+ * =================================================================================
+ */
+
+
+/*
+ * ---------------------------------------------------------------------------------
+ * FONT DEFINITIONS
+ * ---------------------------------------------------------------------------------
+ * The following @font-face rules define the custom 'Crimson Text' font family
+ * by loading the local .ttf files for various weights and styles. This ensures
+ * the application has a consistent and unique typography without relying on
+ * external font services.
+ */
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 400; /* Corresponds to 'regular' */
+    src: url('fonts/CrimsonText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-weight: 400; /* Corresponds to 'italic' */
+    src: url('fonts/CrimsonText-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 600; /* Corresponds to 'semibold' */
+    src: url('fonts/CrimsonText-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-weight: 600; /* Corresponds to 'semibold italic' */
+    src: url('fonts/CrimsonText-SemiBoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 700; /* Corresponds to 'bold' */
+    src: url('fonts/CrimsonText-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-weight: 700; /* Corresponds to 'bold italic' */
+    src: url('fonts/CrimsonText-BoldItalic.ttf') format('truetype');
+}
+/* === End of Font Definitions === */
+
+
+/*
+ * ---------------------------------------------------------------------------------
+ * GLOBAL & LAYOUT STYLES
+ * ---------------------------------------------------------------------------------
+ * These are the base styles applied to the entire application.
+ */
+
+body {
+    /* Sets the default font for the entire application to our custom font, with a fallback. */
+    font-family: 'Crimson Text', serif;
+    /* Adds some space at the bottom of the page content. */
+    padding-bottom: 20px;
+}
+
+/*
+ * This class is used as the main container for page content.
+ * It provides padding to prevent content from touching the edges of the browser window.
+ */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/*
+ * ---------------------------------------------------------------------------------
+ * BOOTSTRAP OVERRIDES
+ * ---------------------------------------------------------------------------------
+ * These rules modify the default behavior of Bootstrap components.
+ */
+
+/*
+ * Overrides the default Bootstrap behavior for horizontal description lists.
+ * This ensures that long terms in the <dt> element will wrap instead of being
+ * truncated, improving readability.
+ */
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+/*
+ * ---------------------------------------------------------------------------------
+ * FORM ELEMENT STYLES
+ * ---------------------------------------------------------------------------------
+ * These rules provide default styling for form inputs.
+ */
+
+/*
+ * Sets a maximum width on form elements to prevent them from becoming
+ * excessively wide on larger screens, improving the layout of forms.
+ */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

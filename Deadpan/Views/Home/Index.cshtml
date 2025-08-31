@@ -1,0 +1,195 @@
+﻿@*
+    This view serves as the main homepage for the Deadpan application.
+    It is strongly typed to the HomepageViewModel, which contains all the dynamic data
+    needed to build the page, including recent reviews and movie recommendations.
+*@
+@model Deadpan.Models.HomepageViewModel
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Home";
+    // Initialize a Random object to be used for selecting random posters.
+    Random rnd = new Random();
+}
+
+@*
+    Inline CSS styles specifically for the activity feed on this page.
+    This styles the star ratings and the "liked" heart icon.
+*@
+<!-- === CSS STYLES FOR FEED === -->
+<style>
+    .feed-rating {
+        font-size: 1em;
+        color: #ddd; /* Empty stars */
+    }
+
+        .feed-rating .filled {
+            color: #f5c518; /* Filled stars */
+        }
+
+    .feed-heart {
+        color: #e74c3c; /* Pink/Red heart */
+        font-size: 0.9em;
+        margin-left: 4px;
+    }
+</style>
+<!-- === END OF CSS === -->
+@*
+    This block displays a personalized welcome message if the user is logged in,
+    or a generic title if they are an anonymous visitor.
+*@
+<!-- Personalized Welcome / Generic Title -->
+@if (Request.IsAuthenticated)
+{
+    <h2>Welcome back, @ViewBag.UserNickname</h2>
+    <p>Here's what's new on Deadpan...</p>
+}
+else
+{
+    <h2>Recent Activity on Deadpan</h2>
+}
+
+<hr />
+
+@*
+    This is the main activity feed, displaying the most recent reviews.
+    It iterates through the RecentReviews collection from the ViewModel.
+*@
+<!-- Activity Feed Grid -->
+<div class="row">
+    @foreach (var review in Model.RecentReviews)
+    {
+        <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+            @*
+                This logic selects a random poster URL from the comma-separated list
+                stored in the database. If no posters are available, it uses a placeholder.
+            *@
+            @{
+                string posterToShow = "https://via.placeholder.com/300x450?text=No+Poster";
+                if (!string.IsNullOrWhiteSpace(review.PosterUrls))
+                {
+                    var posters = review.PosterUrls.Split(',');
+                    posterToShow = posters[rnd.Next(posters.Length)];
+                }
+            }
+            <a href="@Url.Action("Details", "Movies", new { id = review.MovieId })">
+                <img src="@posterToShow" class="img-responsive img-thumbnail" alt="@review.MovieTitle Poster" />
+            </a>
+            <div>
+                <small>@review.MovieTitle</small>
+            </div>
+            <div>
+                <small>
+                    @* This section renders the star rating based on the review's decimal value. *@
+                    <span class="feed-rating">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (review.Rating >= i)
+                            {
+                                <span class="filled">★</span> @* Full star *@
+                            }
+                            else if (review.Rating >= (i - 0.5m))
+                            {
+                                <span class="filled">½</span> @* Half star *@
+                            }
+                            else
+                            {
+                                <span>☆</span> @* Empty star *@
+                            }
+                        }
+                    </span>
+
+                    @* If the reviewer has also "liked" this movie, a heart icon is displayed. *@
+                    @if (review.UserLikedMovie)
+                    {
+                        <span class="feed-heart">♥</span>
+                    }
+                    @* Displays the reviewer's name as a link to their profile page. *@
+                    by @Html.ActionLink(review.UserDisplayName, "Index", "Profile", new { id = review.UserId }, null)
+                </small>
+            </div>
+        </div>
+    }
+</div>
+
+@*
+    This section displays a list of recommended movies from a randomly selected director.
+    It only renders if the DirectorRecommendations list in the ViewModel is not empty.
+*@
+<!-- Director Recommendations -->
+@if (Model.DirectorRecommendations != null && Model.DirectorRecommendations.Any())
+{
+    <hr />
+    <h3>More from @Model.RecommendedDirectorName</h3>
+    <div class="row">
+        @foreach (var movie in Model.DirectorRecommendations)
+        {
+            <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                @{
+                    string posterToShow = "https://via.placeholder.com/300x450?text=No+Poster";
+                    if (!string.IsNullOrWhiteSpace(movie.PosterUrls))
+                    {
+                        var posters = movie.PosterUrls.Split(',');
+                        posterToShow = posters[rnd.Next(posters.Length)];
+                    }
+                }
+                <a href="@Url.Action("Details", "Movies", new { id = movie.MovieId })">
+                    <img src="@posterToShow" class="img-responsive img-thumbnail" alt="@movie.Title Poster" />
+                </a>
+                <div>
+                    <small>@movie.Title</small>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@*
+    This section displays a list of recommended movies from a randomly selected decade.
+    It only renders if the DecadeRecommendations list in the ViewModel is not empty.
+*@
+<!-- === DECADE RECOMMENDATIONS SECTION === -->
+@if (Model.DecadeRecommendations != null && Model.DecadeRecommendations.Any())
+{
+    <hr />
+    <h3>Cinema by decades: @Model.RecommendedDecade</h3>
+    <div class="row">
+        @foreach (var movie in Model.DecadeRecommendations)
+        {
+            <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                @{
+                    string posterToShow = "https://via.placeholder.com/300x450?text=No+Poster";
+                    if (!string.IsNullOrWhiteSpace(movie.PosterUrls))
+                    {
+                        var posters = movie.PosterUrls.Split(',');
+                        posterToShow = posters[rnd.Next(posters.Length)];
+                    }
+                }
+                <a href="@Url.Action("Details", "Movies", new { id = movie.MovieId })">
+                    <img src="@posterToShow" class="img-responsive img-thumbnail" alt="@movie.Title Poster" />
+                </a>
+                <div>
+                    <small>@movie.Title</small>
+                </div>
+            </div>
+        }
+    </div>
+}
+<!-- === END OF SECTION === -->
+@*
+    This section displays a brief "About" message for the application,
+    but only to users who are not currently logged in.
+*@
+<!-- Conditional "About" Section -->
+@if (!Request.IsAuthenticated)
+{
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <h3>About Deadpan</h3>
+            <p>
+                Deadpan is a minimalist application for logging, rating, and reviewing films, inspired by the distinctive aesthetic of director Jim Jarmusch. It's a place for quiet reflection on cinema, built for those who appreciate the poetry in the mundane and the beauty of a simple logbook.
+            </p>
+        </div>
+    </div>
+}

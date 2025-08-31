@@ -1,0 +1,101 @@
+﻿@*
+    This view displays the main list of all movies in the database.
+    It is strongly typed to an IEnumerable of Movie, which means it expects a collection of Movie objects from the controller.
+*@
+@model IEnumerable<Deadpan.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+<h2>Movies</h2>
+
+@* --- SEARCH FORM --- *@
+@*
+    This form allows users to search for movies. It uses FormMethod.Get, which means the
+    search query will be passed in the URL (e.g., /Movies?SearchString=Jarmusch).
+    The "SearchString" textbox is pre-populated with the current filter value from the ViewBag
+    to keep the search term visible after submission.
+*@
+@using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+{
+    <p>
+        Find by Title or Director: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" class="btn btn-default btn-sm" />
+    </p>
+}
+
+@*
+    The "Add New Movie" link is only shown to authenticated users.
+    It links to the "Fetch" action, guiding users to import movies via the TMDB API.
+*@
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Add New Movie", "Fetch")
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @*
+                --- SORTABLE TABLE HEADERS ---
+                Each of these ActionLinks allows the user to sort the table by a specific column.
+                - The first parameter is the link text (e.g., "Title").
+                - The second is the action name ("Index").
+                - The third is a route values object that passes the sortOrder and the currentFilter back to the controller.
+                  This ensures that sorting can be applied to the currently filtered search results.
+                  The ViewBag properties (e.g., TitleSortParm) are set in the controller to toggle between ascending and descending order.
+            *@
+            @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TitleSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Director", "Index", new { sortOrder = ViewBag.DirectorSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Release Year", "Index", new { sortOrder = ViewBag.YearSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortSynopsis)
+        </th>
+        <th></th> @* Empty header for the action links column *@
+    </tr>
+
+    @* --- MOVIE LIST --- *@
+    @* Loop through each movie in the Model collection and create a table row for it. *@
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortSynopsis)
+            </td>
+            <td>
+                @*
+                    --- ACTION LINKS ---
+                    SECURITY CHECK: The "Edit" and "Delete" links are only rendered if the currently
+                    logged-in user has the "Admin" role. The "Details" link is visible to everyone.
+                *@
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MovieId }) <span>|</span>
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.MovieId })
+                @if (User.IsInRole("Admin"))
+                {
+                    <span>|</span> @Html.ActionLink("Delete", "Delete", new { id = item.MovieId })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

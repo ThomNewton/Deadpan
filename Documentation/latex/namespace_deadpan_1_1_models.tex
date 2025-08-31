@@ -1,0 +1,65 @@
+\hypertarget{namespace_deadpan_1_1_models}{}\doxysection{Deadpan.\+Models Namespace Reference}
+\label{namespace_deadpan_1_1_models}\index{Deadpan.Models@{Deadpan.Models}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Add Phone Number\char`\"{} form. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_application_user}{Application\+User}}
+\begin{DoxyCompactList}\small\item\em Represents a user in the application, extending the default ASP.\+NET Identity\+User. This class includes custom properties and relationships specific to the \mbox{\hyperlink{namespace_deadpan}{Deadpan}} application, such as a user\textquotesingle{}s nickname and their collections of reviews and favorite movies. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Change Password\char`\"{} form. This is used when a user with an existing local password wants to change it. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_configure_two_factor_view_model}{Configure\+Two\+Factor\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for configuring two-\/factor authentication. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for confirming an external login for the first time. It\textquotesingle{}s used when a user authenticates via a third-\/party provider (e.\+g., Google) and needs to associate that login with a local account email. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_external_login_list_view_model}{External\+Login\+List\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the list of available external login providers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_factor_view_model}{Factor\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model used for handling factors in two-\/factor authentication. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Forgot Password\char`\"{} confirmation screen. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_forgot_view_model}{Forgot\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the initial \char`\"{}\+Forgot Password\char`\"{} screen. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_homepage_review_view_model}{Homepage\+Review\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em Represents a streamlined, flattened view model for a single review displayed on the homepage feed. This class contains only the essential information needed for display, helping to optimize data transfer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_homepage_view_model}{Homepage\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em Represents the composite view model for the application\textquotesingle{}s homepage. This class acts as a container for all the dynamic data required to render the main landing page, such as recent reviews and various movie recommendations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_index_view_model}{Index\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the main account management dashboard (Index view). It provides a summary of the user\textquotesingle{}s current security settings. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_login_view_model}{Login\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the login form. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_manage_logins_view_model}{Manage\+Logins\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Manage Logins\char`\"{} page. It displays current external logins and other available providers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}}
+\begin{DoxyCompactList}\small\item\em Represents a single movie in the database. This is a core domain model for the application. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_register_view_model}{Register\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the registration form. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Reset Password\char`\"{} form, used after a user has clicked a password reset link. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_review}{Review}}
+\begin{DoxyCompactList}\small\item\em Represents a single user review for a specific movie. This class links an Application\+User and a Movie together. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Send Code\char`\"{} screen in two-\/factor authentication. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Set Password\char`\"{} form. This is used when a user registered via an external login and does not yet have a local password. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_cast}{Tmdb\+Cast}}
+\begin{DoxyCompactList}\small\item\em Represents a single cast member (actor) from the movie\textquotesingle{}s credits. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_crew}{Tmdb\+Crew}}
+\begin{DoxyCompactList}\small\item\em Represents a single crew member (e.\+g., director, writer) from the movie\textquotesingle{}s credits. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_movie_credits}{Tmdb\+Movie\+Credits}}
+\begin{DoxyCompactList}\small\item\em Represents the top-\/level credits object, containing lists of cast and crew. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_movie_details}{Tmdb\+Movie\+Details}}
+\begin{DoxyCompactList}\small\item\em Represents the detailed information for a single movie retrieved from the TMDB API. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_movie_images}{Tmdb\+Movie\+Images}}
+\begin{DoxyCompactList}\small\item\em Represents the container for all image collections associated with a movie. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_movie_search_response}{Tmdb\+Movie\+Search\+Response}}
+\begin{DoxyCompactList}\small\item\em Represents the top-\/level response from a TMDB movie search API call. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_movie_search_result}{Tmdb\+Movie\+Search\+Result}}
+\begin{DoxyCompactList}\small\item\em Represents a single, summarized movie result from a TMDB API search query. This class is used to display the initial list of search results. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_tmdb_poster}{Tmdb\+Poster}}
+\begin{DoxyCompactList}\small\item\em Represents a single poster image object from the TMDB API. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_verify_code_view_model}{Verify\+Code\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Verify Code\char`\"{} screen in two-\/factor authentication. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_deadpan_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}}
+\begin{DoxyCompactList}\small\item\em View model for the \char`\"{}\+Verify Phone Number\char`\"{} form. \end{DoxyCompactList}\end{DoxyCompactItemize}

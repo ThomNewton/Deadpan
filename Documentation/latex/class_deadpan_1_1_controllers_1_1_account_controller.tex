@@ -1,0 +1,470 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_account_controller}{}\doxysection{Deadpan.\+Controllers.\+Account\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_account_controller}\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+
+
+Manages user account operations such as login, registration, password management, and external provider authentication. This controller is based on the default ASP.\+NET Identity template.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Account\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_account_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Challenge\+Result}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a66afcc7ea3ebacf967f0d1bface0bb4c}\label{class_deadpan_1_1_controllers_1_1_account_controller_a66afcc7ea3ebacf967f0d1bface0bb4c}} 
+{\bfseries Account\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Account\+Controller class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ad50ce7ed9d3e630e2bbd5fcd0b9f2ce7}{Account\+Controller}} (\mbox{\hyperlink{class_deadpan_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_deadpan_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Account\+Controller class with specific managers. Used for dependency injection and unit testing. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a9ccda20bb2f4d51646f6a0957672a3ae}{Login}} (string return\+Url)
+\begin{DoxyCompactList}\small\item\em Displays the user login page. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ab007d012613d05d10991b43f2a7ca5f5}{Login}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_login_view_model}{Login\+View\+Model}} model, string return\+Url)
+\begin{DoxyCompactList}\small\item\em Handles the user login form submission. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a6ed077e60ed85918da862ce121dfe56a}{Verify\+Code}} (string provider, string return\+Url, bool remember\+Me)
+\begin{DoxyCompactList}\small\item\em Displays the two-\/factor authentication code verification page. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ad9dc7606458727d7b784ea29a21e8e57}{Verify\+Code}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_verify_code_view_model}{Verify\+Code\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of the two-\/factor authentication code. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a4d1423a9a7c883ce3125c0cc927eee04}{Register}} ()
+\begin{DoxyCompactList}\small\item\em Displays the user registration page. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ad0d82218c2a9f3b32874c5a284d275c6}{Register}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_register_view_model}{Register\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the user registration form submission. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a12340cc4cff4a3391f3968e77173d405}{Confirm\+Email}} (string user\+Id, string code)
+\begin{DoxyCompactList}\small\item\em Confirms a user\textquotesingle{}s email address using a token. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a5639c3cde4a769fc53dba9abe04c2be9}{Forgot\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Displays the \char`\"{}forgot password\char`\"{} page. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ad36ff5f3a0f0886d0ce9b4e382ece929}{Forgot\+Password}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of the \char`\"{}forgot password\char`\"{} form. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a908d295182ee1b49ac857b9676a402cd}{Forgot\+Password\+Confirmation}} ()
+\begin{DoxyCompactList}\small\item\em Displays the \char`\"{}forgot password\char`\"{} confirmation page. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ae4c5883db4e6bbf16dc709c9d3dcbd7c}{Reset\+Password}} (string code)
+\begin{DoxyCompactList}\small\item\em Displays the password reset page. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_abfa419e1852d20bf27514251c3454e3e}{Reset\+Password}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of the password reset form. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a3e7ee1fdd6c17df75a15d48253777759}{Reset\+Password\+Confirmation}} ()
+\begin{DoxyCompactList}\small\item\em Displays the password reset confirmation page. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_aaff3b9e1f5ff12f485c5f110cf196917}{External\+Login}} (string provider, string return\+Url)
+\begin{DoxyCompactList}\small\item\em Initiates a login with an external provider (e.\+g., Google, Facebook). \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a682ac8cb3c9f83b4d687814aea368ed3}{Send\+Code}} (string return\+Url, bool remember\+Me)
+\begin{DoxyCompactList}\small\item\em Displays the page for selecting a two-\/factor authentication method. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_aba1acc64f59c4b251a770ae59c71697e}{Send\+Code}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission for sending a two-\/factor authentication code. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_aeb14271a8547f32c8d2c93497531d42b}{External\+Login\+Callback}} (string return\+Url)
+\begin{DoxyCompactList}\small\item\em Called by the external provider after a user authenticates. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_aee930f981a98279a49bdb28acc010caa}{External\+Login\+Confirmation}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}} model, string return\+Url)
+\begin{DoxyCompactList}\small\item\em Handles the submission of the external login confirmation form for new users. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_a3792ed2da90f29725ad09c3847e4eb7a}{Log\+Off}} ()
+\begin{DoxyCompactList}\small\item\em Handles the user log off request. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_ad6275e332eebd3d352eaa3be199cff2a}{External\+Login\+Failure}} ()
+\begin{DoxyCompactList}\small\item\em Displays a page indicating a failure with an external login provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_account_controller_afb4abfa4271f75bac23846b0f404caf8}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Disposes of the user and sign-\/in managers when the controller is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a4a1e507ef91a042116248222a4b3646d}\label{class_deadpan_1_1_controllers_1_1_account_controller_a4a1e507ef91a042116248222a4b3646d}} 
+\mbox{\hyperlink{class_deadpan_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} {\bfseries Sign\+In\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the Application\+Sign\+In\+Manager instance for this request. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a7cff24e3725ca7fd8e7f192d67945cd0}\label{class_deadpan_1_1_controllers_1_1_account_controller_a7cff24e3725ca7fd8e7f192d67945cd0}} 
+\mbox{\hyperlink{class_deadpan_1_1_application_user_manager}{Application\+User\+Manager}} {\bfseries User\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the Application\+User\+Manager instance for this request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages user account operations such as login, registration, password management, and external provider authentication. This controller is based on the default ASP.\+NET Identity template. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ad50ce7ed9d3e630e2bbd5fcd0b9f2ce7}\label{class_deadpan_1_1_controllers_1_1_account_controller_ad50ce7ed9d3e630e2bbd5fcd0b9f2ce7}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!AccountController@{AccountController}}
+\index{AccountController@{AccountController}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{AccountController()}{AccountController()}}
+{\footnotesize\ttfamily Deadpan.\+Controllers.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager,  }\item[{\mbox{\hyperlink{class_deadpan_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the Account\+Controller class with specific managers. Used for dependency injection and unit testing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Manager} & The application\textquotesingle{}s user manager.\\
+\hline
+{\em sign\+In\+Manager} & The application\textquotesingle{}s sign-\/in manager.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a12340cc4cff4a3391f3968e77173d405}\label{class_deadpan_1_1_controllers_1_1_account_controller_a12340cc4cff4a3391f3968e77173d405}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ConfirmEmail@{ConfirmEmail}}
+\index{ConfirmEmail@{ConfirmEmail}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ConfirmEmail()}{ConfirmEmail()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Confirm\+Email (\begin{DoxyParamCaption}\item[{string}]{user\+Id,  }\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Confirms a user\textquotesingle{}s email address using a token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & The ID of the user to confirm.\\
+\hline
+{\em code} & The email confirmation token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Confirm\+Email view on success, or the Error view on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_afb4abfa4271f75bac23846b0f404caf8}\label{class_deadpan_1_1_controllers_1_1_account_controller_afb4abfa4271f75bac23846b0f404caf8}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Deadpan.\+Controllers.\+Account\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Disposes of the user and sign-\/in managers when the controller is disposed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True if called from Dispose(), false if called from a finalizer.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_aaff3b9e1f5ff12f485c5f110cf196917}\label{class_deadpan_1_1_controllers_1_1_account_controller_aaff3b9e1f5ff12f485c5f110cf196917}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ExternalLogin@{ExternalLogin}}
+\index{ExternalLogin@{ExternalLogin}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ExternalLogin()}{ExternalLogin()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+External\+Login (\begin{DoxyParamCaption}\item[{string}]{provider,  }\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Initiates a login with an external provider (e.\+g., Google, Facebook). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em provider} & The name of the external login provider.\\
+\hline
+{\em return\+Url} & The URL to redirect to after a successful login.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A challenge result that redirects the user to the external provider\textquotesingle{}s login page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_aeb14271a8547f32c8d2c93497531d42b}\label{class_deadpan_1_1_controllers_1_1_account_controller_aeb14271a8547f32c8d2c93497531d42b}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ExternalLoginCallback@{ExternalLoginCallback}}
+\index{ExternalLoginCallback@{ExternalLoginCallback}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ExternalLoginCallback()}{ExternalLoginCallback()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+External\+Login\+Callback (\begin{DoxyParamCaption}\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Called by the external provider after a user authenticates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\+Url} & The URL to redirect to after a successful login.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect on success, or the External\+Login\+Confirmation view if the user is new.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_aee930f981a98279a49bdb28acc010caa}\label{class_deadpan_1_1_controllers_1_1_account_controller_aee930f981a98279a49bdb28acc010caa}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ExternalLoginConfirmation@{ExternalLoginConfirmation}}
+\index{ExternalLoginConfirmation@{ExternalLoginConfirmation}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ExternalLoginConfirmation()}{ExternalLoginConfirmation()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+External\+Login\+Confirmation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}}}]{model,  }\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of the external login confirmation form for new users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the user\textquotesingle{}s email.\\
+\hline
+{\em return\+Url} & The URL to redirect to after a successful login.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect on success, or the view with errors on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ad6275e332eebd3d352eaa3be199cff2a}\label{class_deadpan_1_1_controllers_1_1_account_controller_ad6275e332eebd3d352eaa3be199cff2a}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ExternalLoginFailure@{ExternalLoginFailure}}
+\index{ExternalLoginFailure@{ExternalLoginFailure}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ExternalLoginFailure()}{ExternalLoginFailure()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+External\+Login\+Failure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays a page indicating a failure with an external login provider. 
+
+\begin{DoxyReturn}{Returns}
+The rendered External\+Login\+Failure view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a5639c3cde4a769fc53dba9abe04c2be9}\label{class_deadpan_1_1_controllers_1_1_account_controller_a5639c3cde4a769fc53dba9abe04c2be9}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ForgotPassword@{ForgotPassword}}
+\index{ForgotPassword@{ForgotPassword}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ForgotPassword()}{ForgotPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Forgot\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the \char`\"{}forgot password\char`\"{} page. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Forgot\+Password view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ad36ff5f3a0f0886d0ce9b4e382ece929}\label{class_deadpan_1_1_controllers_1_1_account_controller_ad36ff5f3a0f0886d0ce9b4e382ece929}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ForgotPassword@{ForgotPassword}}
+\index{ForgotPassword@{ForgotPassword}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ForgotPassword()}{ForgotPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Forgot\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of the \char`\"{}forgot password\char`\"{} form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the user\textquotesingle{}s email.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Forgot\+Password\+Confirmation view. This is returned even if the user does not exist to prevent user enumeration.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a908d295182ee1b49ac857b9676a402cd}\label{class_deadpan_1_1_controllers_1_1_account_controller_a908d295182ee1b49ac857b9676a402cd}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ForgotPasswordConfirmation@{ForgotPasswordConfirmation}}
+\index{ForgotPasswordConfirmation@{ForgotPasswordConfirmation}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ForgotPasswordConfirmation()}{ForgotPasswordConfirmation()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Forgot\+Password\+Confirmation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the \char`\"{}forgot password\char`\"{} confirmation page. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Forgot\+Password\+Confirmation view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ab007d012613d05d10991b43f2a7ca5f5}\label{class_deadpan_1_1_controllers_1_1_account_controller_ab007d012613d05d10991b43f2a7ca5f5}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!Login@{Login}}
+\index{Login@{Login}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Login (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_login_view_model}{Login\+View\+Model}}}]{model,  }\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Handles the user login form submission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The login view model containing user credentials.\\
+\hline
+{\em return\+Url} & The URL to redirect to after a successful login.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect on success, or the Login view with an error message on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a9ccda20bb2f4d51646f6a0957672a3ae}\label{class_deadpan_1_1_controllers_1_1_account_controller_a9ccda20bb2f4d51646f6a0957672a3ae}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!Login@{Login}}
+\index{Login@{Login}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Login (\begin{DoxyParamCaption}\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Displays the user login page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\+Url} & The URL to redirect to after a successful login.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Login view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a3792ed2da90f29725ad09c3847e4eb7a}\label{class_deadpan_1_1_controllers_1_1_account_controller_a3792ed2da90f29725ad09c3847e4eb7a}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!LogOff@{LogOff}}
+\index{LogOff@{LogOff}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{LogOff()}{LogOff()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Log\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the user log off request. 
+
+\begin{DoxyReturn}{Returns}
+A redirect to the homepage.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a4d1423a9a7c883ce3125c0cc927eee04}\label{class_deadpan_1_1_controllers_1_1_account_controller_a4d1423a9a7c883ce3125c0cc927eee04}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!Register@{Register}}
+\index{Register@{Register}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the user registration page. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Register view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ad0d82218c2a9f3b32874c5a284d275c6}\label{class_deadpan_1_1_controllers_1_1_account_controller_ad0d82218c2a9f3b32874c5a284d275c6}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!Register@{Register}}
+\index{Register@{Register}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_register_view_model}{Register\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the user registration form submission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The registration view model containing the new user\textquotesingle{}s details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the homepage on success, or the Register view with errors on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_abfa419e1852d20bf27514251c3454e3e}\label{class_deadpan_1_1_controllers_1_1_account_controller_abfa419e1852d20bf27514251c3454e3e}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ResetPassword@{ResetPassword}}
+\index{ResetPassword@{ResetPassword}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ResetPassword()}{ResetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Reset\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of the password reset form. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the user\textquotesingle{}s new password details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the Reset\+Password\+Confirmation view on success, or the Reset\+Password view with errors on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ae4c5883db4e6bbf16dc709c9d3dcbd7c}\label{class_deadpan_1_1_controllers_1_1_account_controller_ae4c5883db4e6bbf16dc709c9d3dcbd7c}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ResetPassword@{ResetPassword}}
+\index{ResetPassword@{ResetPassword}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ResetPassword()}{ResetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Reset\+Password (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Displays the password reset page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The password reset token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Reset\+Password view if the code is valid, otherwise the Error view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a3e7ee1fdd6c17df75a15d48253777759}\label{class_deadpan_1_1_controllers_1_1_account_controller_a3e7ee1fdd6c17df75a15d48253777759}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!ResetPasswordConfirmation@{ResetPasswordConfirmation}}
+\index{ResetPasswordConfirmation@{ResetPasswordConfirmation}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{ResetPasswordConfirmation()}{ResetPasswordConfirmation()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Account\+Controller.\+Reset\+Password\+Confirmation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the password reset confirmation page. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Reset\+Password\+Confirmation view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_aba1acc64f59c4b251a770ae59c71697e}\label{class_deadpan_1_1_controllers_1_1_account_controller_aba1acc64f59c4b251a770ae59c71697e}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!SendCode@{SendCode}}
+\index{SendCode@{SendCode}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{SendCode()}{SendCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Send\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission for sending a two-\/factor authentication code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the selected provider.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the Verify\+Code page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a682ac8cb3c9f83b4d687814aea368ed3}\label{class_deadpan_1_1_controllers_1_1_account_controller_a682ac8cb3c9f83b4d687814aea368ed3}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!SendCode@{SendCode}}
+\index{SendCode@{SendCode}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{SendCode()}{SendCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Send\+Code (\begin{DoxyParamCaption}\item[{string}]{return\+Url,  }\item[{bool}]{remember\+Me }\end{DoxyParamCaption})}
+
+
+
+Displays the page for selecting a two-\/factor authentication method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\+Url} & The URL to redirect to after successful authentication.\\
+\hline
+{\em remember\+Me} & A flag indicating if the user\textquotesingle{}s session should be persistent.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Send\+Code view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_a6ed077e60ed85918da862ce121dfe56a}\label{class_deadpan_1_1_controllers_1_1_account_controller_a6ed077e60ed85918da862ce121dfe56a}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!VerifyCode@{VerifyCode}}
+\index{VerifyCode@{VerifyCode}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{VerifyCode()}{VerifyCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Verify\+Code (\begin{DoxyParamCaption}\item[{string}]{provider,  }\item[{string}]{return\+Url,  }\item[{bool}]{remember\+Me }\end{DoxyParamCaption})}
+
+
+
+Displays the two-\/factor authentication code verification page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em provider} & The two-\/factor authentication provider (e.\+g., \char`\"{}\+Email\char`\"{} or \char`\"{}\+Phone\char`\"{}).\\
+\hline
+{\em return\+Url} & The URL to redirect to after verification.\\
+\hline
+{\em remember\+Me} & A flag indicating if the user\textquotesingle{}s session should be persistent.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Verify\+Code view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_account_controller_ad9dc7606458727d7b784ea29a21e8e57}\label{class_deadpan_1_1_controllers_1_1_account_controller_ad9dc7606458727d7b784ea29a21e8e57}} 
+\index{Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}!VerifyCode@{VerifyCode}}
+\index{VerifyCode@{VerifyCode}!Deadpan.Controllers.AccountController@{Deadpan.Controllers.AccountController}}
+\doxysubsubsection{\texorpdfstring{VerifyCode()}{VerifyCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Account\+Controller.\+Verify\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_verify_code_view_model}{Verify\+Code\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of the two-\/factor authentication code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the verification code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect on success, or the Verify\+Code view with an error on failure.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Account\+Controller.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,383 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller}{}\doxysection{Deadpan.\+Controllers.\+Manage\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_manage_controller}\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+
+
+Manages user-\/specific account settings for authenticated users. This includes password management, external logins, and two-\/factor authentication.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Manage\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_manage_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a0b222319d6c732c09983524b3bc56b7a}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a0b222319d6c732c09983524b3bc56b7a}} 
+enum {\bfseries Manage\+Message\+Id} \{ \newline
+{\bfseries Add\+Phone\+Success}
+, {\bfseries Change\+Password\+Success}
+, {\bfseries Set\+Two\+Factor\+Success}
+, {\bfseries Set\+Password\+Success}
+, \newline
+{\bfseries Remove\+Login\+Success}
+, {\bfseries Remove\+Phone\+Success}
+, {\bfseries Error}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a1d6c952cd08cb9fe61350c5292302920}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a1d6c952cd08cb9fe61350c5292302920}} 
+{\bfseries Manage\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_af9cbe5a53d16a1b9868d60656b66e7a7}{Manage\+Controller}} (\mbox{\hyperlink{class_deadpan_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_deadpan_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\begin{DoxyCompactList}\small\item\em Constructor for dependency injection. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a0bc02b45c183685a70fd3cdcc3ce026e}{Index}} (Manage\+Message\+Id? message)
+\begin{DoxyCompactList}\small\item\em Displays the main account management dashboard. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_af240f9073bed3d89d6aedd7e238a7762}{Remove\+Login}} (string login\+Provider, string provider\+Key)
+\begin{DoxyCompactList}\small\item\em Removes an external login provider from the user\textquotesingle{}s account. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_aa561823ddc8e4977c9feb4a501982d75}{Add\+Phone\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Displays the page for a user to add a phone number. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a946d4c455b21e501040a83bf012a6845}{Add\+Phone\+Number}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of a new phone number. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_afbe847fc60f833d895157e1850101039}{Enable\+Two\+Factor\+Authentication}} ()
+\begin{DoxyCompactList}\small\item\em Enables two-\/factor authentication for the current user. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a41f537687b202e9e4e7372eb529818f2}{Disable\+Two\+Factor\+Authentication}} ()
+\begin{DoxyCompactList}\small\item\em Disables two-\/factor authentication for the current user. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a7d17c19c49956574f1fc6f22dd87037f}{Verify\+Phone\+Number}} (string phone\+Number)
+\begin{DoxyCompactList}\small\item\em Displays the page for a user to verify their phone number. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a4213e4ac5e0247e2d2b640297cc6a945}{Verify\+Phone\+Number}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of a phone number verification code. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a3021978f97702f23acc36f6ffced0302}{Remove\+Phone\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Removes the phone number from the user\textquotesingle{}s account. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a46b708521640995ca7ee88b7f30d8c40}{Change\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Displays the page for a user to change their password. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a20c5ee0894495293aaa037e35ceb0812}{Change\+Password}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of a password change request. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a66acd2826a48b9b7fa8c455bf447ff54}{Set\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Displays the page for a user to set a password for the first time (if they registered with an external login). \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a4cd75086d20786929440ef8220587a55}{Set\+Password}} (\mbox{\hyperlink{class_deadpan_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}} model)
+\begin{DoxyCompactList}\small\item\em Handles the submission of a new password for an account that doesn\textquotesingle{}t have one. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a611b0e14e2d3e746cf2bfce920692c96}{Manage\+Logins}} (Manage\+Message\+Id? message)
+\begin{DoxyCompactList}\small\item\em Displays the page for managing external logins associated with the account. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a96d6080b62086d528478271577c835c9}{Link\+Login}} (string provider)
+\begin{DoxyCompactList}\small\item\em Initiates the process of linking a new external login to the current user\textquotesingle{}s account. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a366eb7cec0e860b4c98929b0978060c8}{Link\+Login\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em The callback action that is executed after the user authenticates with the external provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_manage_controller_a57a51601fac6f309da6ee52161aa3219}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Disposes of the user manager instance when the controller is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a236271bc0ea9e542e79298cf2d1ee3ca}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a236271bc0ea9e542e79298cf2d1ee3ca}} 
+\mbox{\hyperlink{class_deadpan_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} {\bfseries Sign\+In\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the application sign-\/in manager from the OWIN context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_ae75bb45573408e780ff338ab45398553}\label{class_deadpan_1_1_controllers_1_1_manage_controller_ae75bb45573408e780ff338ab45398553}} 
+\mbox{\hyperlink{class_deadpan_1_1_application_user_manager}{Application\+User\+Manager}} {\bfseries User\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the application user manager from the OWIN context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages user-\/specific account settings for authenticated users. This includes password management, external logins, and two-\/factor authentication. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_af9cbe5a53d16a1b9868d60656b66e7a7}\label{class_deadpan_1_1_controllers_1_1_manage_controller_af9cbe5a53d16a1b9868d60656b66e7a7}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!ManageController@{ManageController}}
+\index{ManageController@{ManageController}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageController()}{ManageController()}}
+{\footnotesize\ttfamily Deadpan.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager,  }\item[{\mbox{\hyperlink{class_deadpan_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager }\end{DoxyParamCaption})}
+
+
+
+Constructor for dependency injection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Manager} & The application\textquotesingle{}s user manager.\\
+\hline
+{\em sign\+In\+Manager} & The application\textquotesingle{}s sign-\/in manager.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_aa561823ddc8e4977c9feb4a501982d75}\label{class_deadpan_1_1_controllers_1_1_manage_controller_aa561823ddc8e4977c9feb4a501982d75}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the page for a user to add a phone number. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Add\+Phone\+Number view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a946d4c455b21e501040a83bf012a6845}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a946d4c455b21e501040a83bf012a6845}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!AddPhoneNumber@{AddPhoneNumber}}
+\index{AddPhoneNumber@{AddPhoneNumber}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{AddPhoneNumber()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of a new phone number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the phone number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the Verify\+Phone\+Number page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a46b708521640995ca7ee88b7f30d8c40}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a46b708521640995ca7ee88b7f30d8c40}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the page for a user to change their password. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Change\+Password view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a20c5ee0894495293aaa037e35ceb0812}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a20c5ee0894495293aaa037e35ceb0812}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!ChangePassword@{ChangePassword}}
+\index{ChangePassword@{ChangePassword}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ChangePassword()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of a password change request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the old and new passwords.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the management Index page on success, or redisplays the form on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a41f537687b202e9e4e7372eb529818f2}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a41f537687b202e9e4e7372eb529818f2}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}}
+\index{DisableTwoFactorAuthentication@{DisableTwoFactorAuthentication}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{DisableTwoFactorAuthentication()}{DisableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Disable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables two-\/factor authentication for the current user. 
+
+\begin{DoxyReturn}{Returns}
+A redirect to the management Index page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a57a51601fac6f309da6ee52161aa3219}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a57a51601fac6f309da6ee52161aa3219}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Deadpan.\+Controllers.\+Manage\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Disposes of the user manager instance when the controller is disposed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True if called from Dispose(), false if called from a finalizer.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_afbe847fc60f833d895157e1850101039}\label{class_deadpan_1_1_controllers_1_1_manage_controller_afbe847fc60f833d895157e1850101039}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}}
+\index{EnableTwoFactorAuthentication@{EnableTwoFactorAuthentication}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{EnableTwoFactorAuthentication()}{EnableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Enable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enables two-\/factor authentication for the current user. 
+
+\begin{DoxyReturn}{Returns}
+A redirect to the management Index page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a0bc02b45c183685a70fd3cdcc3ce026e}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a0bc02b45c183685a70fd3cdcc3ce026e}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!Index@{Index}}
+\index{Index@{Index}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Index (\begin{DoxyParamCaption}\item[{Manage\+Message\+Id?}]{message }\end{DoxyParamCaption})}
+
+
+
+Displays the main account management dashboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & An optional message to display to the user (e.\+g., success or error notifications).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Index view with the user\textquotesingle{}s account settings.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a96d6080b62086d528478271577c835c9}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a96d6080b62086d528478271577c835c9}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!LinkLogin@{LinkLogin}}
+\index{LinkLogin@{LinkLogin}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLogin()}{LinkLogin()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Manage\+Controller.\+Link\+Login (\begin{DoxyParamCaption}\item[{string}]{provider }\end{DoxyParamCaption})}
+
+
+
+Initiates the process of linking a new external login to the current user\textquotesingle{}s account. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em provider} & The external authentication provider to link.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A challenge result that redirects the user to the external provider\textquotesingle{}s login page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a366eb7cec0e860b4c98929b0978060c8}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a366eb7cec0e860b4c98929b0978060c8}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!LinkLoginCallback@{LinkLoginCallback}}
+\index{LinkLoginCallback@{LinkLoginCallback}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{LinkLoginCallback()}{LinkLoginCallback()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Link\+Login\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The callback action that is executed after the user authenticates with the external provider. 
+
+\begin{DoxyReturn}{Returns}
+A redirect to the Manage\+Logins page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a611b0e14e2d3e746cf2bfce920692c96}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a611b0e14e2d3e746cf2bfce920692c96}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!ManageLogins@{ManageLogins}}
+\index{ManageLogins@{ManageLogins}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{ManageLogins()}{ManageLogins()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Manage\+Logins (\begin{DoxyParamCaption}\item[{Manage\+Message\+Id?}]{message }\end{DoxyParamCaption})}
+
+
+
+Displays the page for managing external logins associated with the account. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & An optional message to display to the user.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Manage\+Logins view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_af240f9073bed3d89d6aedd7e238a7762}\label{class_deadpan_1_1_controllers_1_1_manage_controller_af240f9073bed3d89d6aedd7e238a7762}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!RemoveLogin@{RemoveLogin}}
+\index{RemoveLogin@{RemoveLogin}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemoveLogin()}{RemoveLogin()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Remove\+Login (\begin{DoxyParamCaption}\item[{string}]{login\+Provider,  }\item[{string}]{provider\+Key }\end{DoxyParamCaption})}
+
+
+
+Removes an external login provider from the user\textquotesingle{}s account. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em login\+Provider} & The provider of the login to remove (e.\+g., \char`\"{}\+Google\char`\"{}).\\
+\hline
+{\em provider\+Key} & The unique key for the user with that provider.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the Manage\+Logins page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a3021978f97702f23acc36f6ffced0302}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a3021978f97702f23acc36f6ffced0302}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!RemovePhoneNumber@{RemovePhoneNumber}}
+\index{RemovePhoneNumber@{RemovePhoneNumber}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{RemovePhoneNumber()}{RemovePhoneNumber()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Remove\+Phone\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes the phone number from the user\textquotesingle{}s account. 
+
+\begin{DoxyReturn}{Returns}
+A redirect to the management Index page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a66acd2826a48b9b7fa8c455bf447ff54}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a66acd2826a48b9b7fa8c455bf447ff54}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the page for a user to set a password for the first time (if they registered with an external login). 
+
+\begin{DoxyReturn}{Returns}
+The rendered Set\+Password view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a4cd75086d20786929440ef8220587a55}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a4cd75086d20786929440ef8220587a55}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!SetPassword@{SetPassword}}
+\index{SetPassword@{SetPassword}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{SetPassword()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of a new password for an account that doesn\textquotesingle{}t have one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the new password.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the management Index page on success, or redisplays the form on failure.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a7d17c19c49956574f1fc6f22dd87037f}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a7d17c19c49956574f1fc6f22dd87037f}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{string}]{phone\+Number }\end{DoxyParamCaption})}
+
+
+
+Displays the page for a user to verify their phone number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phone\+Number} & The phone number to be verified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Verify\+Phone\+Number view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_manage_controller_a4213e4ac5e0247e2d2b640297cc6a945}\label{class_deadpan_1_1_controllers_1_1_manage_controller_a4213e4ac5e0247e2d2b640297cc6a945}} 
+\index{Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!Deadpan.Controllers.ManageController@{Deadpan.Controllers.ManageController}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deadpan_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Handles the submission of a phone number verification code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The view model containing the phone number and verification code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the management Index page on success, or redisplays the form on failure.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Manage\+Controller.\+cs\end{DoxyCompactItemize}

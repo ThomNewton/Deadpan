@@ -1,0 +1,129 @@
+﻿@*
+    This view renders the form for creating a new movie.
+    It is strongly typed to the Movie model, which provides the structure and data annotations
+    for the form fields.
+*@
+@model Deadpan.Models.Movie
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@*
+    This Html.BeginForm helper creates the <form> element.
+    It is configured to POST the form data to the "Create" action on the "Movies" controller.
+*@
+@using (Html.BeginForm("Create", "Movies", FormMethod.Post, new { role = "form" }))
+{
+    @* Include an anti-forgery token for security against CSRF attacks. *@
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Movie</h4>
+        <hr />
+        @* Displays a summary of all validation errors at the top of the form. *@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @* --- Form Group for Title --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Director --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Director, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Director, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Director, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Release Year --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReleaseYear, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReleaseYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReleaseYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Short Synopsis --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShortSynopsis, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.ShortSynopsis, 3, 40, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShortSynopsis, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Synopsis --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Synopsis, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Synopsis, 10, 40, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Synopsis, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Starring --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Starring, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Starring, 3, 40, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Starring, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Written By --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.WrittenBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WrittenBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WrittenBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Music By --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.MusicBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MusicBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MusicBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Form Group for Poster URLs --- *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.PosterUrls, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.PosterUrls, 5, 40, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PosterUrls, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @* --- Submit Button --- *@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*
+    This section renders the jQuery Validation script bundle.
+    This enables client-side validation based on the data annotations in the Movie model.
+*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

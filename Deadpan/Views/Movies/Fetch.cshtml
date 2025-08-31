@@ -1,0 +1,75 @@
+﻿@*
+    This view provides the user interface for searching The Movie Database (TMDB).
+    It is strongly typed to an IEnumerable of TmdbMovieSearchResult, which is the
+    list of movie results returned from the controller after a search.
+*@
+@model IEnumerable<Deadpan.Models.TmdbMovieSearchResult>
+
+@{
+    ViewBag.Title = "Fetch Movie from TMDB";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@* --- SEARCH FORM --- *@
+@*
+    This form allows the user to submit a search query.
+    It contains a text box named "movieTitle" which corresponds to the parameter
+    in the [HttpPost] Fetch action in the MoviesController.
+*@
+@using (Html.BeginForm())
+{
+    <p>
+        Movie Title: @Html.TextBox("movieTitle")
+        <input type="submit" value="Search TMDB" class="btn btn-default" />
+    </p>
+}
+
+@* --- SEARCH RESULTS --- *@
+@*
+    This section conditionally displays the search results.
+    It checks if the Model (the list of movies) is not null and contains any items.
+*@
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Release Date</th>
+            <th></th> @* Empty header for the action button column *@
+        </tr>
+        @* Loop through each movie search result in the Model. *@
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.PosterPath))
+                    {
+                        @* Constructs the full URL for the movie poster using the base path from TMDB. *@
+                        <img src="https://image.tmdb.org/t/p/w92/@item.PosterPath" alt="Poster" />
+                    }
+                </td>
+                <td>@item.Title</td>
+                <td>@item.ReleaseDate</td>
+                <td>
+                    @*
+                        This is the "Select" button. It's an ActionLink that directs the user to the
+                        "GetMovieDetails" action in the MoviesController, passing the unique TMDB ID of the movie.
+                        This action will then fetch the full details and pre-populate the Create form.
+                    *@
+                    @Html.ActionLink("Select", "GetMovieDetails", new { tmdbId = item.Id }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </table>
+}
+@*
+    This 'else if' block provides feedback to the user if their search yielded no results.
+    It specifically checks if the request method was a POST, ensuring this message only appears
+    AFTER a search has been attempted, not on the initial page load (which is a GET request).
+*@
+else if (ViewContext.HttpContext.Request.HttpMethod == "POST")
+{
+    <p>No results found.</p>
+}

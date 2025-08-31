@@ -1,0 +1,62 @@
+\hypertarget{class_deadpan_1_1_models_1_1_application_user}{}\doxysection{Deadpan.\+Models.\+Application\+User Class Reference}
+\label{class_deadpan_1_1_models_1_1_application_user}\index{Deadpan.Models.ApplicationUser@{Deadpan.Models.ApplicationUser}}
+
+
+Represents a user in the application, extending the default ASP.\+NET Identity\+User. This class includes custom properties and relationships specific to the \mbox{\hyperlink{namespace_deadpan}{Deadpan}} application, such as a user\textquotesingle{}s nickname and their collections of reviews and favorite movies.  
+
+
+Inheritance diagram for Deadpan.\+Models.\+Application\+User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_models_1_1_application_user}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_application_user_a4a53e3430bcf32623af84001be6794c8}\label{class_deadpan_1_1_models_1_1_application_user_a4a53e3430bcf32623af84001be6794c8}} 
+{\bfseries Application\+User} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Application\+User class. The constructor initializes the navigation property collections to prevent null reference exceptions. \end{DoxyCompactList}\item 
+async Task$<$ Claims\+Identity $>$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_application_user_abf19021553f4b235cbbb90aa299dca07}{Generate\+User\+Identity\+Async}} (User\+Manager$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_application_user}{Application\+User}} $>$ manager)
+\begin{DoxyCompactList}\small\item\em Generates a Claims\+Identity for the user, which is used by the authentication system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_application_user_a7bcbf77d92753f8b4ae2aa6a6c89c448}\label{class_deadpan_1_1_models_1_1_application_user_a7bcbf77d92753f8b4ae2aa6a6c89c448}} 
+string {\bfseries Nickname}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the user\textquotesingle{}s public-\/facing display name or nickname. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_application_user_aa5d86f84b40ba9cf21a201452e44e6ff}\label{class_deadpan_1_1_models_1_1_application_user_aa5d86f84b40ba9cf21a201452e44e6ff}} 
+virtual ICollection$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_review}{Review}} $>$ {\bfseries Reviews}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the collection of reviews written by this user. This is a navigation property that defines a one-\/to-\/many relationship. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_application_user_a1157f80555ec13a13c163ff441da3044}\label{class_deadpan_1_1_models_1_1_application_user_a1157f80555ec13a13c163ff441da3044}} 
+virtual ICollection$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}} $>$ {\bfseries Favorite\+Movies}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the collection of movies that this user has marked as a favorite. This is a navigation property that defines a many-\/to-\/many relationship. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a user in the application, extending the default ASP.\+NET Identity\+User. This class includes custom properties and relationships specific to the \mbox{\hyperlink{namespace_deadpan}{Deadpan}} application, such as a user\textquotesingle{}s nickname and their collections of reviews and favorite movies. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_models_1_1_application_user_abf19021553f4b235cbbb90aa299dca07}\label{class_deadpan_1_1_models_1_1_application_user_abf19021553f4b235cbbb90aa299dca07}} 
+\index{Deadpan.Models.ApplicationUser@{Deadpan.Models.ApplicationUser}!GenerateUserIdentityAsync@{GenerateUserIdentityAsync}}
+\index{GenerateUserIdentityAsync@{GenerateUserIdentityAsync}!Deadpan.Models.ApplicationUser@{Deadpan.Models.ApplicationUser}}
+\doxysubsubsection{\texorpdfstring{GenerateUserIdentityAsync()}{GenerateUserIdentityAsync()}}
+{\footnotesize\ttfamily async Task$<$ Claims\+Identity $>$ Deadpan.\+Models.\+Application\+User.\+Generate\+User\+Identity\+Async (\begin{DoxyParamCaption}\item[{User\+Manager$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_application_user}{Application\+User}} $>$}]{manager }\end{DoxyParamCaption})}
+
+
+
+Generates a Claims\+Identity for the user, which is used by the authentication system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The User\+Manager instance used to create the identity.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation, containing the user\textquotesingle{}s Claims\+Identity.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Models/Identity\+Models.\+cs\end{DoxyCompactItemize}

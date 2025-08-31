@@ -1,0 +1,46 @@
+﻿@*
+    This view provides a form for an authenticated user to add a phone number to their account.
+    This is the first step in setting up SMS-based two-factor authentication.
+    It is strongly typed to the AddPhoneNumberViewModel, which contains validation attributes for the phone number.
+*@
+@model Deadpan.Models.AddPhoneNumberViewModel
+@{
+    ViewBag.Title = "Phone Number";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+
+    @*
+        This form POSTs the phone number to the "AddPhoneNumber" action
+        in the "Manage" controller.
+    *@
+    @using (Html.BeginForm("AddPhoneNumber", "Manage", FormMethod.Post, new { role = "form" }))
+    {
+        @* Renders a hidden input with a unique token to prevent Cross-Site Request Forgery (CSRF) attacks. *@
+        @Html.AntiForgeryToken()
+        <h4>Add a Phone Number</h4>
+        <hr />
+        @* Displays a summary of all validation errors at the top of the form. *@
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            @Html.LabelFor(m => m.Number, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @* Renders a text input field for the user to enter their phone number. *@
+                @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-2 col-md-10">
+                <input type="submit" class="btn btn-outline-dark" value="Submit" />
+            </div>
+        </div>
+    }
+</main>
+
+@*
+    This section renders the jQuery Validation script bundle to enable client-side validation
+    based on the data annotations in the AddPhoneNumberViewModel.
+*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

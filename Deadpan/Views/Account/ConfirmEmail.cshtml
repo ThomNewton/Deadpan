@@ -1,0 +1,18 @@
+﻿@*
+    This view is displayed after a user successfully clicks the email confirmation link
+    sent to them upon registration. It serves as a simple success message.
+*@
+@{
+    ViewBag.Title = "Confirm Email";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <div>
+        <p>
+            @* Display a thank you message and provide a convenient link
+                for the user to proceed directly to the login page.
+            *@
+            Thank you for confirming your email. @Html.ActionLink("Click here to log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+    </div>
+</main>

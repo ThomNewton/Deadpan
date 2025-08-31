@@ -1,0 +1,77 @@
+\hypertarget{class_deadpan_1_1_data_1_1_deadpan_db_context}{}\doxysection{Deadpan.\+Data.\+Deadpan\+Db\+Context Class Reference}
+\label{class_deadpan_1_1_data_1_1_deadpan_db_context}\index{Deadpan.Data.DeadpanDbContext@{Deadpan.Data.DeadpanDbContext}}
+
+
+The main Entity Framework database context for the application. It serves as the bridge between the C\# domain models and the database. This context manages both the custom application data (Movies, Reviews) and the ASP.\+NET Identity tables (Users, Roles) by inheriting from Identity\+Db\+Context.  
+
+
+Inheritance diagram for Deadpan.\+Data.\+Deadpan\+Db\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_data_1_1_deadpan_db_context}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_data_1_1_deadpan_db_context_a8782367d3f8242033f49bca5448f2db8}\label{class_deadpan_1_1_data_1_1_deadpan_db_context_a8782367d3f8242033f49bca5448f2db8}} 
+{\bfseries Deadpan\+Db\+Context} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Deadpan\+Db\+Context, configured to use the \char`\"{}\+Default\+Connection\char`\"{} connection string from the Web.\+config file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_deadpan_1_1_data_1_1_deadpan_db_context}{Deadpan\+Db\+Context}} \mbox{\hyperlink{class_deadpan_1_1_data_1_1_deadpan_db_context_a878a460089b7fd8959e1bbf6cd14c26c}{Create}} ()
+\begin{DoxyCompactList}\small\item\em A static factory method used by the OWIN middleware to create a new instance of the database context per request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_data_1_1_deadpan_db_context_a7977acc23ca8a71e24ec86869c0a5f3f}{On\+Model\+Creating}} (Db\+Model\+Builder model\+Builder)
+\begin{DoxyCompactList}\small\item\em Overrides the default model creation behavior to apply custom configurations using the Fluent API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_deadpan_1_1_data_1_1_deadpan_db_context_ac5980b3fd501989b939ad3605f0c39e7}\label{class_deadpan_1_1_data_1_1_deadpan_db_context_ac5980b3fd501989b939ad3605f0c39e7}} 
+Db\+Set$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_movie}{Movie}} $>$ {\bfseries Movies}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Db\+Set for Movies. This property represents the collection of all movies in the database and maps to the \char`\"{}\+Movies\char`\"{} table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_deadpan_1_1_data_1_1_deadpan_db_context_af921c6529922c681b6fc764ab78e41df}\label{class_deadpan_1_1_data_1_1_deadpan_db_context_af921c6529922c681b6fc764ab78e41df}} 
+Db\+Set$<$ \mbox{\hyperlink{class_deadpan_1_1_models_1_1_review}{Review}} $>$ {\bfseries Reviews}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Db\+Set for Reviews. This property represents the collection of all reviews in the database and maps to the \char`\"{}\+Reviews\char`\"{} table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main Entity Framework database context for the application. It serves as the bridge between the C\# domain models and the database. This context manages both the custom application data (Movies, Reviews) and the ASP.\+NET Identity tables (Users, Roles) by inheriting from Identity\+Db\+Context. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_data_1_1_deadpan_db_context_a878a460089b7fd8959e1bbf6cd14c26c}\label{class_deadpan_1_1_data_1_1_deadpan_db_context_a878a460089b7fd8959e1bbf6cd14c26c}} 
+\index{Deadpan.Data.DeadpanDbContext@{Deadpan.Data.DeadpanDbContext}!Create@{Create}}
+\index{Create@{Create}!Deadpan.Data.DeadpanDbContext@{Deadpan.Data.DeadpanDbContext}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_deadpan_1_1_data_1_1_deadpan_db_context}{Deadpan\+Db\+Context}} Deadpan.\+Data.\+Deadpan\+Db\+Context.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A static factory method used by the OWIN middleware to create a new instance of the database context per request. 
+
+\begin{DoxyReturn}{Returns}
+A new instance of Deadpan\+Db\+Context.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_data_1_1_deadpan_db_context_a7977acc23ca8a71e24ec86869c0a5f3f}\label{class_deadpan_1_1_data_1_1_deadpan_db_context_a7977acc23ca8a71e24ec86869c0a5f3f}} 
+\index{Deadpan.Data.DeadpanDbContext@{Deadpan.Data.DeadpanDbContext}!OnModelCreating@{OnModelCreating}}
+\index{OnModelCreating@{OnModelCreating}!Deadpan.Data.DeadpanDbContext@{Deadpan.Data.DeadpanDbContext}}
+\doxysubsubsection{\texorpdfstring{OnModelCreating()}{OnModelCreating()}}
+{\footnotesize\ttfamily override void Deadpan.\+Data.\+Deadpan\+Db\+Context.\+On\+Model\+Creating (\begin{DoxyParamCaption}\item[{Db\+Model\+Builder}]{model\+Builder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Overrides the default model creation behavior to apply custom configurations using the Fluent API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Builder} & The builder that defines the model for the context being created.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data/Deadpan\+Db\+Context.\+cs\end{DoxyCompactItemize}

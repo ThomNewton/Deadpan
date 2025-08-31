@@ -1,0 +1,306 @@
+﻿@*
+    This view displays all the details for a single movie.
+    It's strongly typed to the Movie model, which contains all the movie's information
+    as well as its related reviews and the users who have favorited it.
+*@
+@model Deadpan.Models.Movie
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@* --- INLINE STYLES FOR INTERACTIVE ELEMENTS --- *@
+@*
+    These styles are defined directly in the view to control the appearance and behavior
+    of the interactive star rating and the favorite (heart) button. This keeps the
+    styling for these specific components self-contained.
+*@
+<style>
+    /* Styles for the container of the interactive stars */
+    .interactive-star-rating {
+        display: inline-block;
+        font-size: 2em;
+        line-height: 1;
+        vertical-align: middle;
+    }
+
+        /* Individual star styling */
+        .interactive-star-rating .star {
+            cursor: pointer;
+            color: #ddd; /* Default empty star color */
+        }
+
+            /* Style for stars when hovered over or selected */
+            .interactive-star-rating .star.hover,
+            .interactive-star-rating .star.selected {
+                color: #f5c518; /* Gold color for filled stars */
+            }
+
+    /* Base style for the favorite button */
+    .heart-button {
+        background: none;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+        padding: 0 10px;
+        vertical-align: middle;
+    }
+
+        /* Style for the heart when the movie is favorited */
+        .heart-button.favorited {
+            color: #e74c3c; /* Red color for a filled heart */
+        }
+
+        /* Style for the heart when the movie is not favorited */
+        .heart-button.not-favorited {
+            color: #ccc; /* Gray color for an empty heart */
+        }
+</style>
+
+
+@* --- MAIN MOVIE DETAILS LAYOUT --- *@
+<div class="row">
+    @* --- Poster Column (Left Side) --- *@
+    <div class="col-md-4">
+        @{
+            // Logic to select the first available poster URL.
+            // If no posters are available, a placeholder image is used.
+            string posterToShow = "https://via.placeholder.com/300x450?text=No+Poster";
+            if (!string.IsNullOrWhiteSpace(Model.PosterUrls))
+            {
+                posterToShow = Model.PosterUrls.Split(',').FirstOrDefault();
+            }
+        }
+        <img src="@posterToShow" class="img-responsive img-thumbnail" alt="@Model.Title Poster" />
+    </div>
+
+    @* --- Text Details Column (Right Side) --- *@
+    <div class="col-md-8">
+        <h2>@Html.DisplayFor(model => model.Title) <small>(@Html.DisplayFor(model => model.ReleaseYear))</small></h2>
+        <h4>Directed by @Html.DisplayFor(model => model.Director)</h4>
+        <hr />
+
+        @* --- Synopsis and Credits Section --- *@
+        <p>
+            <strong>Synopsis:</strong><br />
+            @*
+                Displays the full Synopsis if available, otherwise falls back to the ShortSynopsis.
+                Html.Raw is used to render newline characters (\n) as HTML line breaks (<br />).
+            *@
+            @Html.Raw((Model.Synopsis ?? Model.ShortSynopsis)?.Replace("\n", "<br />"))
+        </p>
+
+        @* A horizontal rule is only shown if there are any credits to display. *@
+        @if (!string.IsNullOrWhiteSpace(Model.Starring) || !string.IsNullOrWhiteSpace(Model.WrittenBy) || !string.IsNullOrWhiteSpace(Model.MusicBy))
+        {
+            <hr />
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.Starring))
+        {
+            <p><strong>Starring:</strong> @Model.Starring</p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.WrittenBy))
+        {
+            <p><strong>Written by:</strong> @Model.WrittenBy</p>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.MusicBy))
+        {
+            <p><strong>Music by:</strong> @Model.MusicBy</p>
+        }
+
+        @* --- QUICK ACTIONS (RATING & FAVORITE) --- *@
+        @* This section is only visible to logged-in users. *@
+        @if (Request.IsAuthenticated)
+        {
+            <div style="display: flex; align-items: center; margin-top: 20px;">
+                @* --- Quick Rating Form --- *@
+                @* This form submits the star rating to the "RateMovie" action in the ReviewsController. *@
+                @using (Html.BeginForm("RateMovie", "Reviews", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("movieId", Model.MovieId)
+                    <div id="quickRatingStars" class="interactive-star-rating">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                    @* This hidden input will hold the rating value set by the JavaScript. *@
+                    <input type="hidden" name="rating" id="quickRatingInput" />
+                }
+
+                @* --- Favorite Heart Button Form --- *@
+                @* This form submits to the "ToggleFavorite" action in the ProfileController. *@
+                @using (Html.BeginForm("ToggleFavorite", "Profile", new { movieId = Model.MovieId }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @* Conditionally render a filled or empty heart based on whether the user has favorited this movie. *@
+                    if (ViewBag.IsFavorited)
+                    {
+                        <button type="submit" class="heart-button favorited" title="Unfavorite">♥</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="heart-button not-favorited" title="Favorite">♡</button>
+                    }
+                }
+            </div>
+        }
+    </div>
+</div>
+
+
+@* --- REVIEWS LIST SECTION --- *@
+<hr />
+<h3>Reviews</h3>
+@if (Model.Reviews != null && Model.Reviews.Any())
+{
+    @* Loop through each review associated with this movie. *@
+    foreach (var review in Model.Reviews)
+    {
+        <div class="well well-sm" style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+                <p><strong>Rating:</strong> @review.Rating.ToString("0.##") / 5</p>
+                @if (!string.IsNullOrWhiteSpace(review.Comment))
+                {
+                    <p>@review.Comment</p>
+                }
+                <small class="text-muted">
+                    By @(string.IsNullOrWhiteSpace(review.User?.Nickname) ? review.User.UserName.Split('@')[0] : review.User.Nickname) on @review.ReviewDate.ToShortDateString()
+                </small>
+            </div>
+            <div style="margin-left: 20px;">
+                @*
+                    SECURITY CHECK: The "Delete" button for a review is only rendered if the currently logged-in user
+                    is the author of the review OR if the user is an Administrator.
+                *@
+                @if (User.Identity.GetUserId() == review.UserId || User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "Delete", "Reviews", new { id = review.ReviewId }, new { @class = "btn btn-danger btn-xs" })
+                }
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>No reviews yet. Be the first to add one!</p>
+}
+
+
+@* --- ADD/EDIT REVIEW FORM SECTION --- *@
+<hr />
+@if (Request.IsAuthenticated)
+{
+    <h4>Add or Edit Your Review</h4>
+    // Check if the current user has already written a review for this movie to pre-populate the textarea.
+    string userReviewComment = Model.Reviews.FirstOrDefault(r => r.UserId == User.Identity.GetUserId())?.Comment;
+    using (Html.BeginForm("Create", "Reviews", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("MovieId", Model.MovieId)
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Comment">Review</label>
+                    <textarea name="Comment" id="Comment" class="form-control" rows="6">@userReviewComment</textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Save Review</button>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    @* If the user is not logged in, show a link to the login page instead of the form. *@
+    <p>You must be @Html.ActionLink("logged in", "Login", "Account") to add a review.</p>
+}
+
+<hr />
+
+@* --- ADMIN & NAVIGATION LINKS --- *@
+<p>
+    @* The "Edit" link is only visible to users in the "Admin" role. *@
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Edit", "Edit", "Movies", new { id = Model.MovieId }, null) <span>|</span>
+    }
+    @Html.ActionLink("Back to List", "Index", "Movies")
+</p>
+
+@* --- JAVASCRIPT SECTION FOR STAR RATING --- *@
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            // Get references to the star elements and the hidden input field.
+            const stars = $('#quickRatingStars .star');
+            const ratingInput = $('#quickRatingInput');
+            // Get the user's current rating from the ViewBag (passed from the controller).
+            let selectedRating = parseFloat('@ViewBag.UserRating') || 0;
+
+            // Function to update the visual state of the stars based on a rating value.
+            function setStars(rating) {
+                stars.each(function (index) {
+                    const starValue = index + 1;
+                    const starEl = $(this);
+                    starEl.removeClass('selected hover').html('☆'); // Reset star
+                    if (rating >= starValue) {
+                        starEl.addClass('selected').html('★'); // Full star
+                    } else if (rating >= starValue - 0.5) {
+                        starEl.addClass('selected').html('½'); // Half star
+                    }
+                });
+            }
+
+            // Event handler for when the mouse moves over the stars to show a hover effect.
+            stars.on('mousemove', function (e) {
+                const index = stars.index(this);
+                const starWidth = $(this).width();
+                const isHalf = e.offsetX < starWidth / 2;
+                const hoverValue = index + (isHalf ? 0.5 : 1);
+
+                // Update stars to reflect the potential new rating on hover.
+                stars.each(function(i) {
+                    const currentStar = $(this);
+                    const starValue = i + 1;
+                    // Reset to the actual selected state first
+                    currentStar.removeClass('hover').html(currentStar.hasClass('selected') ? (selectedRating >= starValue ? '★' : (selectedRating >= starValue - 0.5 ? '½' : '☆')) : '☆');
+                    // Then apply the hover effect
+                    if (hoverValue >= starValue) {
+                        currentStar.addClass('hover').html('★');
+                    } else if (hoverValue >= starValue - 0.5) {
+                        currentStar.addClass('hover').html('½');
+                    }
+                });
+            });
+
+            // When the mouse leaves the star container, reset the stars to the actual selected rating.
+            stars.parent().on('mouseout', function () {
+                setStars(selectedRating);
+            });
+
+            // Event handler for when a star is clicked.
+            stars.on('click', function (e) {
+                const index = stars.index(this);
+                const starWidth = $(this).width();
+                const isHalf = e.offsetX < starWidth / 2;
+                const newRating = index + (isHalf ? 0.5 : 1);
+
+                // Set the hidden input's value and submit the form.
+                ratingInput.val(newRating);
+                $(this).closest('form').submit();
+            });
+
+            // Initialize the stars on page load with the user's current rating.
+            setStars(selectedRating);
+        });
+    </script>
+}

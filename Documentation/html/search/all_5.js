@@ -1,0 +1,17 @@
+var searchData=
+[
+  ['controllers_0',['Controllers',['../namespace_deadpan_1_1_controllers.html',1,'Deadpan']]],
+  ['data_1',['Data',['../namespace_deadpan_1_1_data.html',1,'Deadpan']]],
+  ['deadpan_2',['Deadpan',['../namespace_deadpan.html',1,'']]],
+  ['deadpandbcontext_3',['DeadpanDbContext',['../class_deadpan_1_1_data_1_1_deadpan_db_context.html',1,'Deadpan.Data.DeadpanDbContext'],['../class_deadpan_1_1_data_1_1_deadpan_db_context.html#a8782367d3f8242033f49bca5448f2db8',1,'Deadpan.Data.DeadpanDbContext.DeadpanDbContext()']]],
+  ['decaderecommendations_4',['DecadeRecommendations',['../class_deadpan_1_1_models_1_1_homepage_view_model.html#a95ac70a5843ca54662dd67b71e91a90c',1,'Deadpan::Models::HomepageViewModel']]],
+  ['delete_5',['Delete',['../class_deadpan_1_1_controllers_1_1_admin_controller.html#a0ce24e5de422d938b26f81532e9dae08',1,'Deadpan.Controllers.AdminController.Delete()'],['../class_deadpan_1_1_controllers_1_1_movies_controller.html#af659f5ca92de7257fac6aca712d4625e',1,'Deadpan.Controllers.MoviesController.Delete()'],['../class_deadpan_1_1_controllers_1_1_reviews_controller.html#a675c547a9d19d7fd53e988a032a7d677',1,'Deadpan.Controllers.ReviewsController.Delete()']]],
+  ['deleteconfirmed_6',['DeleteConfirmed',['../class_deadpan_1_1_controllers_1_1_admin_controller.html#a46b380e3e2e046763a41383817da6777',1,'Deadpan.Controllers.AdminController.DeleteConfirmed()'],['../class_deadpan_1_1_controllers_1_1_movies_controller.html#aeebae541be75c0dbab72fb204f5ded1f',1,'Deadpan.Controllers.MoviesController.DeleteConfirmed()'],['../class_deadpan_1_1_controllers_1_1_reviews_controller.html#ad06a37b96bdade1dbfaa001448b5e07d',1,'Deadpan.Controllers.ReviewsController.DeleteConfirmed()']]],
+  ['details_7',['Details',['../class_deadpan_1_1_controllers_1_1_movies_controller.html#af3575a5ae4203b7b53f75050d804f44b',1,'Deadpan::Controllers::MoviesController']]],
+  ['director_8',['Director',['../class_deadpan_1_1_models_1_1_movie.html#aaa10c2cd9fd5d678c4731bc6ae431ba5',1,'Deadpan::Models::Movie']]],
+  ['directorrecommendations_9',['DirectorRecommendations',['../class_deadpan_1_1_models_1_1_homepage_view_model.html#aef424debdd9c681a0ee99a12b41ab960',1,'Deadpan::Models::HomepageViewModel']]],
+  ['disabletwofactorauthentication_10',['DisableTwoFactorAuthentication',['../class_deadpan_1_1_controllers_1_1_manage_controller.html#a41f537687b202e9e4e7372eb529818f2',1,'Deadpan::Controllers::ManageController']]],
+  ['dispose_11',['Dispose',['../class_deadpan_1_1_controllers_1_1_account_controller.html#afb4abfa4271f75bac23846b0f404caf8',1,'Deadpan.Controllers.AccountController.Dispose()'],['../class_deadpan_1_1_controllers_1_1_admin_controller.html#ab8ea5dddcfe3946ebf8199df1a22b6e1',1,'Deadpan.Controllers.AdminController.Dispose()'],['../class_deadpan_1_1_controllers_1_1_manage_controller.html#a57a51601fac6f309da6ee52161aa3219',1,'Deadpan.Controllers.ManageController.Dispose()'],['../class_deadpan_1_1_controllers_1_1_movies_controller.html#a96b76df652f919c8dd09eeedb9cc66c8',1,'Deadpan.Controllers.MoviesController.Dispose()'],['../class_deadpan_1_1_controllers_1_1_profile_controller.html#af035f55f65f0a388b7e733ac7769d153',1,'Deadpan.Controllers.ProfileController.Dispose()'],['../class_deadpan_1_1_controllers_1_1_reviews_controller.html#a718e89f9fc26c60c5dd1650f068efd06',1,'Deadpan.Controllers.ReviewsController.Dispose()']]],
+  ['migrations_12',['Migrations',['../namespace_deadpan_1_1_migrations.html',1,'Deadpan']]],
+  ['models_13',['Models',['../namespace_deadpan_1_1_models.html',1,'Deadpan']]]
+];

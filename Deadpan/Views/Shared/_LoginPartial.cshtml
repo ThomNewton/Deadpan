@@ -1,0 +1,43 @@
+﻿@*
+    This partial view is responsible for displaying the correct set of user-related links
+    in the navigation bar based on whether the user is logged in or not.
+*@
+
+@using Microsoft.AspNet.Identity
+
+@* Check if the current user is authenticated. *@
+@if (Request.IsAuthenticated)
+{
+    @* If the user is authenticated, display the logout form and user-specific links. *@
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @* Include an anti-forgery token to protect against Cross-Site Request Forgery attacks. *@
+        @Html.AntiForgeryToken()
+
+        <ul class="navbar-nav navbar-right">
+            @* Link to the current user's profile page. The display name is passed from the controller via ViewBag. *@
+            <li>
+                @Html.ActionLink((string)ViewBag.UserDisplay + "'s Profile", "Index", "Profile", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+            </li>
+            @* Link to the account management dashboard. *@
+            <li>
+                @Html.ActionLink("Account Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+            </li>
+            @* Conditionally display the "Manage Users" link ONLY if the current user is in the "Admin" role. *@
+            @if (User.IsInRole("Admin"))
+            {
+                <li>@Html.ActionLink("Manage Users", "Index", "Admin", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
+            }
+            @* The "Log out" link uses JavaScript to submit the hidden logout form, ensuring a secure POST request. *@
+            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
+        </ul>
+    }
+}
+else
+{
+    @* If the user is not authenticated, display the "Register" and "Log in" links. *@
+    <ul class="navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
+    </ul>
+}

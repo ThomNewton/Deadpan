@@ -1,0 +1,56 @@
+﻿@*
+    This view serves as a confirmation page for deleting a user account.
+    It is strongly typed to the ApplicationUser model to display the details
+    of the user who is about to be deleted.
+*@
+@model Deadpan.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Delete User";
+}
+
+<h2>Delete User</h2>
+
+<h3>Are you sure you want to delete this user?</h3>
+<div>
+    <hr />
+    @*
+        A description list (<dl>) is used to display the key details of the user
+        (Nickname and Email) so the administrator can confirm they are deleting the correct account.
+    *@
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nickname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nickname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @*
+        This form, when submitted, will POST to the "DeleteConfirmed" action in the AdminController.
+        Since the action is named "Delete", the form helper correctly targets it.
+    *@
+    @using (Html.BeginForm())
+    {
+        @* Renders a hidden input with a unique token to prevent Cross-Site Request Forgery (CSRF) attacks. *@
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @* The submit button that finalizes the deletion. A dangerous action is styled with 'btn-danger'. *@
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @* A link to cancel the operation and return to the main user list in the Admin dashboard. *@
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

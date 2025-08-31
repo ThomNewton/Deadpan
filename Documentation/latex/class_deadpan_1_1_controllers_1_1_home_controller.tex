@@ -1,0 +1,57 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_home_controller}{}\doxysection{Deadpan.\+Controllers.\+Home\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_home_controller}\index{Deadpan.Controllers.HomeController@{Deadpan.Controllers.HomeController}}
+
+
+Manages the primary public-\/facing pages of the application, such as the homepage and the \char`\"{}\+About\char`\"{} page.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Home\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_home_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_home_controller_a38b4a7f6ddce2c2cb4583be2d1b53a78}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Asynchronously builds and displays the application\textquotesingle{}s homepage. This action aggregates several dynamic content sections, including recent reviews, recommendations for a random director, and recommendations from a random decade. \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_home_controller_a3383c5504492c223af8904791808d7e1}{About}} ()
+\begin{DoxyCompactList}\small\item\em Displays the static \char`\"{}\+About\char`\"{} page of the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the primary public-\/facing pages of the application, such as the homepage and the \char`\"{}\+About\char`\"{} page. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_home_controller_a3383c5504492c223af8904791808d7e1}\label{class_deadpan_1_1_controllers_1_1_home_controller_a3383c5504492c223af8904791808d7e1}} 
+\index{Deadpan.Controllers.HomeController@{Deadpan.Controllers.HomeController}!About@{About}}
+\index{About@{About}!Deadpan.Controllers.HomeController@{Deadpan.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{About()}{About()}}
+{\footnotesize\ttfamily Action\+Result Deadpan.\+Controllers.\+Home\+Controller.\+About (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the static \char`\"{}\+About\char`\"{} page of the application. 
+
+\begin{DoxyReturn}{Returns}
+The rendered About view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_home_controller_a38b4a7f6ddce2c2cb4583be2d1b53a78}\label{class_deadpan_1_1_controllers_1_1_home_controller_a38b4a7f6ddce2c2cb4583be2d1b53a78}} 
+\index{Deadpan.Controllers.HomeController@{Deadpan.Controllers.HomeController}!Index@{Index}}
+\index{Index@{Index}!Deadpan.Controllers.HomeController@{Deadpan.Controllers.HomeController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Home\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Asynchronously builds and displays the application\textquotesingle{}s homepage. This action aggregates several dynamic content sections, including recent reviews, recommendations for a random director, and recommendations from a random decade. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Index view populated with a Homepage\+View\+Model.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Home\+Controller.\+cs\end{DoxyCompactItemize}

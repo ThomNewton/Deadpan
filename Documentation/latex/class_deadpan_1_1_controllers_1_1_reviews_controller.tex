@@ -1,0 +1,131 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_reviews_controller}{}\doxysection{Deadpan.\+Controllers.\+Reviews\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_reviews_controller}\index{Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}}
+
+
+Manages the creation and deletion of user reviews for movies. All actions in this controller require the user to be authenticated.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Reviews\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_reviews_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_reviews_controller_aa119aa11c96496d9a992aa23894e075f}{Create}} (string comment, int movie\+Id)
+\begin{DoxyCompactList}\small\item\em Creates a new review or updates the comment of an existing review for a specific movie. If a review for the movie by the current user already exists, its comment is updated. Otherwise, a new review is created with the provided comment and a default rating of 0. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_reviews_controller_ac0aa9ca0255512b799af3212d3290f62}{Rate\+Movie}} (int movie\+Id, decimal rating)
+\begin{DoxyCompactList}\small\item\em Creates a new review or updates the rating of an existing one. This action is typically called via AJAX from the interactive star rating UI. If a review for the movie by the current user exists, its rating is updated. Otherwise, a new review is created with the provided rating. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_reviews_controller_a675c547a9d19d7fd53e988a032a7d677}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Displays a confirmation page before deleting a review. Ensures that only the user who wrote the review or an admin can access this page. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_reviews_controller_ad06a37b96bdade1dbfaa001448b5e07d}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Handles the permanent deletion of a review. Ensures that only the user who wrote the review or an admin can perform this action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_reviews_controller_a718e89f9fc26c60c5dd1650f068efd06}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Disposes of the database context when the controller is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the creation and deletion of user reviews for movies. All actions in this controller require the user to be authenticated. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_reviews_controller_aa119aa11c96496d9a992aa23894e075f}\label{class_deadpan_1_1_controllers_1_1_reviews_controller_aa119aa11c96496d9a992aa23894e075f}} 
+\index{Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}!Create@{Create}}
+\index{Create@{Create}!Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Reviews\+Controller.\+Create (\begin{DoxyParamCaption}\item[{string}]{comment,  }\item[{int}]{movie\+Id }\end{DoxyParamCaption})}
+
+
+
+Creates a new review or updates the comment of an existing review for a specific movie. If a review for the movie by the current user already exists, its comment is updated. Otherwise, a new review is created with the provided comment and a default rating of 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment} & The text content of the review/comment.\\
+\hline
+{\em movie\+Id} & The ID of the movie being reviewed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the movie\textquotesingle{}s Details page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_reviews_controller_a675c547a9d19d7fd53e988a032a7d677}\label{class_deadpan_1_1_controllers_1_1_reviews_controller_a675c547a9d19d7fd53e988a032a7d677}} 
+\index{Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}!Delete@{Delete}}
+\index{Delete@{Delete}!Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Reviews\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Displays a confirmation page before deleting a review. Ensures that only the user who wrote the review or an admin can access this page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the review to be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Delete confirmation view.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_reviews_controller_ad06a37b96bdade1dbfaa001448b5e07d}\label{class_deadpan_1_1_controllers_1_1_reviews_controller_ad06a37b96bdade1dbfaa001448b5e07d}} 
+\index{Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}!DeleteConfirmed@{DeleteConfirmed}}
+\index{DeleteConfirmed@{DeleteConfirmed}!Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}}
+\doxysubsubsection{\texorpdfstring{DeleteConfirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Reviews\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Handles the permanent deletion of a review. Ensures that only the user who wrote the review or an admin can perform this action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the review to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the associated movie\textquotesingle{}s Details page.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_reviews_controller_a718e89f9fc26c60c5dd1650f068efd06}\label{class_deadpan_1_1_controllers_1_1_reviews_controller_a718e89f9fc26c60c5dd1650f068efd06}} 
+\index{Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Deadpan.\+Controllers.\+Reviews\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Disposes of the database context when the controller is disposed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True if called from Dispose(), false if called from a finalizer.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_reviews_controller_ac0aa9ca0255512b799af3212d3290f62}\label{class_deadpan_1_1_controllers_1_1_reviews_controller_ac0aa9ca0255512b799af3212d3290f62}} 
+\index{Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}!RateMovie@{RateMovie}}
+\index{RateMovie@{RateMovie}!Deadpan.Controllers.ReviewsController@{Deadpan.Controllers.ReviewsController}}
+\doxysubsubsection{\texorpdfstring{RateMovie()}{RateMovie()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Reviews\+Controller.\+Rate\+Movie (\begin{DoxyParamCaption}\item[{int}]{movie\+Id,  }\item[{decimal}]{rating }\end{DoxyParamCaption})}
+
+
+
+Creates a new review or updates the rating of an existing one. This action is typically called via AJAX from the interactive star rating UI. If a review for the movie by the current user exists, its rating is updated. Otherwise, a new review is created with the provided rating. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie\+Id} & The ID of the movie being rated.\\
+\hline
+{\em rating} & The rating value (e.\+g., 0.\+5 to 5.\+0).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the movie\textquotesingle{}s Details page.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Reviews\+Controller.\+cs\end{DoxyCompactItemize}

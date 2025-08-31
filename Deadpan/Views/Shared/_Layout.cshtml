@@ -1,0 +1,87 @@
+﻿@*
+    This is the master layout file for the entire application.
+    Every other view will be rendered inside the @RenderBody() placeholder.
+    It defines the common HTML structure, including the <head>, navigation bar, and footer.
+*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    @* --- META TAGS & TITLE --- *@
+    @* Standard meta tags for character encoding and responsive viewport setup. *@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @* The page title is dynamically set by individual views using ViewBag.Title. *@
+    <title>@ViewBag.Title</title>
+    @* Link to the application's favicon. *@
+    <link rel="icon" href="@Url.Content("~/Content/images/favicon.ico")" type="image/x-icon" />
+
+    @* --- EXTERNAL & BUNDLED STYLES --- *@
+    @* Font Awesome kit for icons. *@
+    <script src="https://kit.fontawesome.com/bcd8618eff.js" crossorigin="anonymous"></script>
+
+    @* Renders the CSS bundle defined in App_Start/BundleConfig.cs. This includes Bootstrap and the custom Site.css. *@
+    @Styles.Render("~/Content/css")
+    @* Renders the Modernizr script bundle, used for feature detection in older browsers. *@
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @* --- TOP NAVIGATION BAR --- *@
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark navbar-fixed-top">
+        <div class="container">
+            @* The logo image, which also links to the homepage. *@
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand" style="padding-top: 2px; padding-bottom: 1px;">
+                <img src="@Url.Content("~/Content/images/tom-pop.png")" alt="Deadpan Logo" style="height: 52px; border-radius: 4px; border: 1px solid white;" />
+            </a>
+            @* The main application brand name, which links to the homepage. *@
+            @Html.ActionLink("Deadpan", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @* The hamburger button for toggling the navigation on smaller screens. *@
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @* The collapsible section of the navbar. *@
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                @* Main navigation links. *@
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Movies", "Index", "Movies", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                @*
+                    Renders the _LoginPartial.cshtml partial view from the ProfileController.
+                    This section dynamically displays "Login/Register" or user-specific links.
+                *@
+                @{Html.RenderAction("_LoginPartial", "Profile");}
+            </div>
+        </div>
+    </nav>
+
+    @* --- MAIN CONTENT AREA --- *@
+    <div class="container body-content">
+        @*
+            This is the main placeholder where the content of individual views
+            (e.g., Index.cshtml, Details.cshtml) will be rendered.
+        *@
+        @RenderBody()
+
+        @* --- FOOTER --- *@
+        <footer>
+            <hr />
+            <p>&copy; @DateTime.Now.Year - Deadpan</p>
+        </footer>
+    </div>
+
+    @* --- SCRIPT BUNDLES --- *@
+    @* Renders the jQuery and Bootstrap JavaScript bundles at the end of the body for faster page load times. *@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*
+        A section for individual views to inject their own specific scripts (like validation scripts).
+        'required: false' means that views are not obligated to define this section.
+    *@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

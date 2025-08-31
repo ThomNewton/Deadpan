@@ -1,0 +1,102 @@
+\hypertarget{class_deadpan_1_1_controllers_1_1_admin_controller}{}\doxysection{Deadpan.\+Controllers.\+Admin\+Controller Class Reference}
+\label{class_deadpan_1_1_controllers_1_1_admin_controller}\index{Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}}
+
+
+Manages administrative tasks for the application, such as user management. Access to this controller is restricted to users in the \char`\"{}\+Admin\char`\"{} role.  
+
+
+Inheritance diagram for Deadpan.\+Controllers.\+Admin\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_deadpan_1_1_controllers_1_1_admin_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_admin_controller_a86b96e200e46a925724b3f0038b751f3}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Displays a list of all registered users in the application. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_admin_controller_a0ce24e5de422d938b26f81532e9dae08}{Delete}} (string id)
+\begin{DoxyCompactList}\small\item\em Displays a confirmation page before deleting a user. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_admin_controller_a46b380e3e2e046763a41383817da6777}{Delete\+Confirmed}} (string id)
+\begin{DoxyCompactList}\small\item\em Handles the permanent deletion of a user and all their associated data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_deadpan_1_1_controllers_1_1_admin_controller_ab8ea5dddcfe3946ebf8199df1a22b6e1}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Disposes of the database context when the controller is disposed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages administrative tasks for the application, such as user management. Access to this controller is restricted to users in the \char`\"{}\+Admin\char`\"{} role. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_admin_controller_a0ce24e5de422d938b26f81532e9dae08}\label{class_deadpan_1_1_controllers_1_1_admin_controller_a0ce24e5de422d938b26f81532e9dae08}} 
+\index{Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}!Delete@{Delete}}
+\index{Delete@{Delete}!Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Admin\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Displays a confirmation page before deleting a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique ID of the user to be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rendered Delete confirmation view showing the user\textquotesingle{}s details.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_admin_controller_a46b380e3e2e046763a41383817da6777}\label{class_deadpan_1_1_controllers_1_1_admin_controller_a46b380e3e2e046763a41383817da6777}} 
+\index{Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}!DeleteConfirmed@{DeleteConfirmed}}
+\index{DeleteConfirmed@{DeleteConfirmed}!Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{DeleteConfirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Admin\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Handles the permanent deletion of a user and all their associated data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique ID of the user to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A redirect to the user list (Index action).
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_admin_controller_ab8ea5dddcfe3946ebf8199df1a22b6e1}\label{class_deadpan_1_1_controllers_1_1_admin_controller_ab8ea5dddcfe3946ebf8199df1a22b6e1}} 
+\index{Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Deadpan.\+Controllers.\+Admin\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Disposes of the database context when the controller is disposed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & True if called from Dispose(), false if called from a finalizer.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deadpan_1_1_controllers_1_1_admin_controller_a86b96e200e46a925724b3f0038b751f3}\label{class_deadpan_1_1_controllers_1_1_admin_controller_a86b96e200e46a925724b3f0038b751f3}} 
+\index{Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}!Index@{Index}}
+\index{Index@{Index}!Deadpan.Controllers.AdminController@{Deadpan.Controllers.AdminController}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Deadpan.\+Controllers.\+Admin\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays a list of all registered users in the application. 
+
+\begin{DoxyReturn}{Returns}
+The rendered Index view containing a list of all users.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Admin\+Controller.\+cs\end{DoxyCompactItemize}

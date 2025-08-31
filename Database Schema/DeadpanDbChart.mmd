@@ -1,0 +1,54 @@
+erDiagram
+    AspNetUsers {
+        string Id PK "User ID"
+        string Nickname
+        string Email
+        string UserName
+    }
+
+    Movies {
+        int MovieId PK "Movie ID"
+        string Title
+        string Director
+        int ReleaseYear
+        string Synopsis
+    }
+
+    Reviews {
+        int ReviewId PK "Review ID"
+        decimal Rating
+        string Comment
+        datetime ReviewDate
+        int MovieId FK "Movie ID"
+        string UserId FK "User ID"
+    }
+
+    AspNetRoles {
+        string Id PK "Role ID"
+        string Name
+    }
+
+    AspNetUserRoles {
+        string UserId FK "User ID"
+        string RoleId FK "Role ID"
+    }
+
+    ApplicationUserMovies {
+        string ApplicationUser_Id FK "User ID"
+        int Movie_MovieId FK "Movie ID"
+    }
+
+    AspNetUsers ||--o{ Reviews : "writes"
+    Movies ||--o{ Reviews : "has"
+
+    AspNetUsers }o--o{ Movies : "favorites (likes)"
+    AspNetUsers }o--o{ AspNetRoles : "has role"
+
+    Reviews }|--|| AspNetUsers : "written by"
+    Reviews }|--|| Movies : "is for"
+
+    ApplicationUserMovies }|..|| AspNetUsers : "links user"
+    ApplicationUserMovies }|..|| Movies : "links movie"
+
+    AspNetUserRoles }|..|| AspNetUsers : "links user"
+    AspNetUserRoles }|..|| AspNetRoles : "links role"

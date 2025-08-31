@@ -1,0 +1,39 @@
+﻿@*
+    This view renders the page where a user selects their preferred method
+    for receiving a two-factor authentication (2FA) code.
+    It is strongly typed to the SendCodeViewModel, which contains the list
+    of available 2FA providers for the user.
+*@
+@model Deadpan.Models.SendCodeViewModel
+@{
+    ViewBag.Title = "Send";
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+
+    @*
+        This form posts the user's chosen 2FA provider to the "SendCode"
+        action in the "AccountController" to trigger sending the verification code.
+    *@
+    @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @* This hidden field preserves the "Remember Me" choice from the initial login page. *@
+        @Html.Hidden("rememberMe", @Model.RememberMe)
+        <h4>Send verification code</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                Select Two-Factor Authentication Provider:
+                @* Renders a dropdown list of the 2FA providers available to the user (e.g., "Email", "SMS"). *@
+                @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+                <input type="submit" value="Submit" class="btn btn-outline-dark" />
+            </div>
+        </div>
+    }
+</main>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

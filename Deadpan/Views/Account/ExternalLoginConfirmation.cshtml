@@ -1,0 +1,51 @@
+﻿@*
+    This view is presented to a user after they have successfully authenticated with an
+    external login provider (e.g., Google) for the first time. It allows them to create
+    and associate a new local account with that external login.
+    It's strongly typed to the ExternalLoginConfirmationViewModel.
+*@
+@model Deadpan.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>Associate your @ViewBag.LoginProvider account.</h3>
+
+    @*
+        This form posts the user's confirmed email address to the "ExternalLoginConfirmation"
+        action in the "AccountController" to finalize the creation of their local account.
+    *@
+    @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        @* Renders a hidden input with a unique token to prevent Cross-Site Request Forgery (CSRF) attacks. *@
+        @Html.AntiForgeryToken()
+
+        <h4>Association Form</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <p class="text-info">
+            You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
+            Please enter a user name for this site below and click the Register button to finish
+            logging in.
+        </p>
+        <div class="row">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
+            <div class="col-md-10">
+                @* The user's email is often pre-populated from the external provider, but they can confirm or change it here. *@
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-2 col-md-10">
+                <input type="submit" class="btn btn-outline-dark" value="Register" />
+            </div>
+        </div>
+    }
+</main>
+
+@* This section includes the necessary jQuery scripts for client-side validation of the form. *@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

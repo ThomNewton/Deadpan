@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['changepassword_0',['ChangePassword',['../class_deadpan_1_1_controllers_1_1_manage_controller.html#a46b708521640995ca7ee88b7f30d8c40',1,'Deadpan.Controllers.ManageController.ChangePassword()'],['../class_deadpan_1_1_controllers_1_1_manage_controller.html#a20c5ee0894495293aaa037e35ceb0812',1,'Deadpan.Controllers.ManageController.ChangePassword(ChangePasswordViewModel model)']]],
+  ['confirmemail_1',['ConfirmEmail',['../class_deadpan_1_1_controllers_1_1_account_controller.html#a12340cc4cff4a3391f3968e77173d405',1,'Deadpan::Controllers::AccountController']]],
+  ['create_2',['Create',['../class_deadpan_1_1_controllers_1_1_movies_controller.html#a37ec65e03ec1aeb24fa9fb2efce1cef6',1,'Deadpan.Controllers.MoviesController.Create()'],['../class_deadpan_1_1_controllers_1_1_movies_controller.html#ad995eb95af6edcd3ef40e8ba948ef4c6',1,'Deadpan.Controllers.MoviesController.Create([Bind(Include=&quot;MovieId,Title,Director,ReleaseYear,ShortSynopsis,Synopsis,WrittenBy,MusicBy,Starring,PosterUrls&quot;)] Movie movie)'],['../class_deadpan_1_1_controllers_1_1_reviews_controller.html#aa119aa11c96496d9a992aa23894e075f',1,'Deadpan.Controllers.ReviewsController.Create()'],['../class_deadpan_1_1_data_1_1_deadpan_db_context.html#a878a460089b7fd8959e1bbf6cd14c26c',1,'Deadpan.Data.DeadpanDbContext.Create()']]]
+];

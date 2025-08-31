@@ -1,0 +1,56 @@
+﻿@*
+    This is a partial view responsible for displaying a list of external
+    authentication providers (e.g., Google, Facebook) that a user can use to log in.
+    It is strongly typed to the ExternalLoginListViewModel to pass along the return URL.
+*@
+@model Deadpan.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<h4>Use another service to log in.</h4>
+<hr />
+@{
+    @*
+        This code block retrieves all the configured external authentication types (like "Google", "Facebook", etc.)
+        from the application's OWIN context. These are configured in the Startup.Auth.cs file.
+    *@
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+
+    @*
+        If there are no external login providers configured in the application,
+        display a helpful message to the developer.
+    *@
+    if (loginProviders.Count() == 0)
+    {
+        <div>
+            <p>
+                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support logging in via external services.
+            </p>
+        </div>
+    }
+    else
+    {
+        @*
+            If external login providers ARE configured, create a form that will post to the
+            "ExternalLogin" action in the "AccountController".
+        *@
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }))
+        {
+            @* Renders a hidden input with a unique token to prevent Cross-Site Request Forgery (CSRF) attacks. *@
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @*
+                        Loop through each available authentication provider and create a submit button for it.
+                        When a user clicks a button, its 'name' ("provider") and 'value' (e.g., "Google") are
+                        sent in the form post, telling the controller which service to use.
+                    *@
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}

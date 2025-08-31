@@ -1,0 +1,64 @@
+﻿@*
+    This view serves as the main account management dashboard for logged-in users.
+    It is strongly typed to the IndexViewModel, which contains summary information
+    about the user's security setup (e.g., if they have a password, linked external logins, etc.).
+*@
+@model Deadpan.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@* Displays a success or error message passed from the controller via the ViewBag. *@
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Password:</dt>
+        <dd>
+            [
+            @*
+                This logic checks if the user has a local password.
+                - If true, it displays a link to the "ChangePassword" page.
+                - If false (e.g., they registered with Google), it displays a link to the "SetPassword" page.
+            *@
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+
+        @*
+            This block contains settings that are currently configured to only be visible to users in the "Admin" role.
+            This includes managing external logins and two-factor authentication.
+        *@
+        @if (User.IsInRole("Admin"))
+        {
+            <dt>External Logins:</dt>
+            <dd>
+                @* Displays the number of external logins associated with the user's account. *@
+                @Model.Logins.Count [
+                @Html.ActionLink("Manage", "ManageLogins") ]
+            </dd>
+
+            <dt>Two-Factor Authentication:</dt>
+            <dd>
+                @*
+                    This section is a placeholder for Two-Factor Authentication (2FA) setup.
+                    Currently, it informs the user that no 2FA providers are configured.
+                *@
+                <p>
+                    There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                    for details on setting up this ASP.NET application to support two-factor authentication.
+                </p>
+            </dd>
+        }
+    </dl>
+</div>
