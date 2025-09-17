@@ -2,11 +2,11 @@ We used Google Gemini (https://gemini.google.com) to help with the following:
 - generating ERD of our database,
 - commenting code
 - generating information about films in the seed
-- beautifying user manual and readme
+- beautifying user manual and README
 
 We used Mermaid Live Editor (https://mermaid.live/) to vizualize the ERD model.
 
-We used Doxygen (https://doxygen.nl/) to generate the final documantation.
+We used Doxygen (https://doxygen.nl/) to generate the final documentation.
 
 We used a poster picture from "Coffee and Cigarettes" (2003) directed by Jim Jarmusch, from Gutek Film website (https://gutekfilm.pl/kawa-i-papierosy-jarmusch) 
 
