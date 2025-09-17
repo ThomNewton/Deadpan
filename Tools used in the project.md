@@ -1,5 +1,5 @@
 We used Google Gemini (https://gemini.google.com) to help with the following:
-- generating ERD of our database,
+- generating ERD of our database
 - commenting code
 - generating information about films in the seed
 - beautifying user manual and README
@@ -14,4 +14,4 @@ We used favicon.io (https://favicon.io/) to generate icon and logo from the afor
 
 We used TMDB (https://www.themoviedb.org/) API to access information about the films present in the database.
 
-We used Google Fonts (https://fonts.google.com/) to change the font of the project to variations of Crimson Text.
+We used Google Fonts (https://fonts.google.com/) to change the fonts of the project to variations of Crimson Text.
